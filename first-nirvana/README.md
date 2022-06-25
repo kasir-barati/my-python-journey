@@ -22,7 +22,15 @@
 
 # IDE
 
-- Efficient IDE for python is PyCharm
+- Efficient IDE for python is not PyCharm
+  - In my experience it was not even close to good. I could type things that were not exists in python and no error in IDE.
+  - Really tough with CPU
 - Installation
   - `sudo yay pycharm-community`
   - `sudo snap install pycharm-community --classic`
+- My prefer is VSCode. [Install these extensions](https://bas.codes/posts/best-vscode-extensions-python). Press ctrl+p and:
+  - `ext install KevinRose.vsc-python-indent`
+  - `ext install KevinRose.vsc-python-indent`
+  - `ext install njqdev.vscode-python-typehint`
+  - `ext install njpwerner.autodocstring`
+  - `ext install thebarkman.vscode-djaneiro`
