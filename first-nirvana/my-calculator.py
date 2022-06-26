@@ -1,4 +1,5 @@
 from enum import Enum
+import json
 
 class Command(Enum):
     INIT = -1
@@ -15,39 +16,39 @@ def is_int(num: int|float) -> None:
 def is_float(num: int|float) -> None:
     assert type(num) is float, 'Entered number is not float'
 
-def take_two_number() -> {"num1": float, "num2": float}:
+def take_two_number() -> {"num1": int|float, "num2": int|float}:
     num1 = input("Enter first number: ")
     num2 = input("Enter second number: ")
 
-    return { "num1": float(num1), "num2": float(num2) }
+    return { "num1": json.loads(num1), "num2": json.loads(num2) }
 
-def take_number() -> float:
+def take_number() -> int|float:
     string_number = input("Enter a number: ")
-    string_number = float(string_number)
+    string_number = json.loads(string_number)
 
     return string_number
 
 def sum(
-        num1: float,
-        num2: float) -> float:
+        num1: int|float,
+        num2: int|float) -> int|float:
     return num1+num2
 
 def minus(
-        num1: float,
-        num2: float) -> float:
+        num1: int|float,
+        num2: int|float) -> int|float:
     return num1-num2
 
 def multiply(
-        num1: float,
-        num2: float) -> float:
+        num1: int|float,
+        num2: int|float) -> int|float:
     return num1*num2
 
 def divide(
-        num1: float,
-        num2: float) -> float:
+        num1: int|float,
+        num2: int|float) -> int|float:
     return num1/num2
 
-previous_result: float = 0
+previous_result: int|float = 0
 command: Command = Command.INIT
 
 while command != Command.EXIT:
