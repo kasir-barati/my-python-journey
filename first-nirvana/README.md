@@ -34,3 +34,16 @@
   - `ext install njqdev.vscode-python-typehint`
   - `ext install njpwerner.autodocstring`
   - `ext install thebarkman.vscode-djaneiro`
+
+# Types
+
+- Numbers
+  - Integer: 1
+  - Floating point: 1.1
+- Strings
+  - `"ad"`
+  - `'ad'`
+- Converting
+  - `int`
+    - If x is not a number. x must be a string, bytes, or bytearray instance representing an integer literal in radix base.
+    - [Official Doc](https://docs.python.org/3/library/functions.html?highlight=int#int)
