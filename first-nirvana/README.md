@@ -35,6 +35,13 @@
   - `ext install njpwerner.autodocstring`
   - `ext install thebarkman.vscode-djaneiro`
 
+# Variables
+
+- No need to specify the variable type
+  - Things like `string var1 = ''`
+- No keyword to define a variable.
+  - Things like `let var1 = 1`, `const cons1 = '2'` in TS/JS
+
 # Types
 
 - Numbers
