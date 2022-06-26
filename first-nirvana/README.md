@@ -57,3 +57,8 @@
 - `split`
   - Return a list of the words in the string, using sep as the delimiter string.
   - [Official Doc](https://docs.python.org/3/library/stdtypes.html#str.split)
+
+# Boolean operators
+
+- In python: `True` and `False`
+- IDK what can I do about prettier in python
