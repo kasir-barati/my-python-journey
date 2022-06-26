@@ -275,3 +275,23 @@
         1. `pip install autopep8`
         2. `autopep8 --in-place --aggressive --aggressive <filename>`
     - [A good article](https://realpython.com/python-code-quality/)
+
+# My Calculator
+
+- I wanna use DBC which stands for Design By Contract
+- Do proper linting
+- Do autopep and black
+- I follow assertive programming to prevent any catastrophe. I assume
+  my calculator is designed for a large sensitive application. I mean
+  Banking, etc.
+- Enums in python:
+  - Member values can be anything, but should be something
+    ```py
+    # Wrong usage
+    class Command(Enum):
+        A
+        B
+        C
+    ```
+  - If the value is unimportant use `auto` instances and an appropriate value will be chosen for you.
+  - Even though we use the class syntax to create Enums, Enums are not normal Python classes

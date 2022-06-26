@@ -11,9 +11,4 @@ for index in range(start, end, step):
 
 while start <= end:
     print(step)
-    start = start + step
-
-"""
-    Wrong usage: 
-    - start += step
-"""
+    start += step
