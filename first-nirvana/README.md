@@ -47,3 +47,13 @@
   - `int`
     - If x is not a number. x must be a string, bytes, or bytearray instance representing an integer literal in radix base.
     - [Official Doc](https://docs.python.org/3/library/functions.html?highlight=int#int)
+
+# String manipulation
+
+- `str`
+  - Return a string version of object.
+  - If object is not provided, returns the empty string. Otherwise, the behavior of `str()` depends on whether encoding or errors is given, as follows.
+  - [Official Doc](https://docs.python.org/3/library/stdtypes.html#str)
+- `split`
+  - Return a list of the words in the string, using sep as the delimiter string.
+  - [Official Doc](https://docs.python.org/3/library/stdtypes.html#str.split)
