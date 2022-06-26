@@ -41,24 +41,27 @@
   - Integer: 1
   - Floating point: 1.1
 - Strings
+
   - `"ad"`
   - `'ad'`
+  - String manipulation
+    - `str`
+      - Return a string version of object.
+      - If object is not provided, returns the empty string. Otherwise, the behavior of `str()` depends on whether encoding or errors is given, as follows.
+      - [Official Doc](https://docs.python.org/3/library/stdtypes.html#str)
+    - `split`
+      - Return a list of the words in the string, using sep as the delimiter string.
+      - [Official Doc](https://docs.python.org/3/library/stdtypes.html#str.split)
+
 - Converting
   - `int`
     - If x is not a number. x must be a string, bytes, or bytearray instance representing an integer literal in radix base.
     - [Official Doc](https://docs.python.org/3/library/functions.html?highlight=int#int)
-
-# String manipulation
-
-- `str`
-  - Return a string version of object.
-  - If object is not provided, returns the empty string. Otherwise, the behavior of `str()` depends on whether encoding or errors is given, as follows.
-  - [Official Doc](https://docs.python.org/3/library/stdtypes.html#str)
-- `split`
-  - Return a list of the words in the string, using sep as the delimiter string.
-  - [Official Doc](https://docs.python.org/3/library/stdtypes.html#str.split)
-
-# Boolean operators
-
-- In python: `True` and `False`
-- IDK what can I do about prettier in python
+- Boolean
+  - In python: `True` and `False`
+  - IDK what can I do about prettier in python
+- Lists
+  - Their medieval name is array.
+- Dictionaries
+  - Their venerable name is objects
+  - A little harder compare to TS/JS
