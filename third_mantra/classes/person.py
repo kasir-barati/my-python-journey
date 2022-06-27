@@ -33,3 +33,23 @@ class Person:
     def generate_damage(self):
         return randrange(self.attack_low, self.attack_high)
 
+    def generate_spell_damage(self, magic_spell_index: int):
+        magic_spell_damage_low = self.magic[magic_spell_index]["damage"] - 5
+        magic_spell_damage_high = self.magic[magic_spell_index]["damage"] + 5
+        
+        return randrange(magic_spell_damage_low, magic_spell_damage_high)
+
+    def take_damage(self, damage: int):
+        if self.hp == 0:
+            # TODO: DBC
+            # TODO: unit test
+            # TODO: Throw error
+            return
+        
+        self.hp -= damage
+        
+        if self.hp < 0:
+            self.hp = 0
+
+        return self.hp
+
