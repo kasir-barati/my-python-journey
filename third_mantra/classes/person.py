@@ -4,16 +4,6 @@ from ..types.magic import Magic
 
 
 class Person:
-    hp: int
-    max_hp: int
-    mp: int
-    max_mp: int
-    attack_low: int
-    attack_high: int
-    defense: int
-    magic: list[Magic]
-    actions: list[Action]
-    
     def __init__(
             self, 
             hp: int, 
