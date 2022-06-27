@@ -74,13 +74,17 @@ class Person:
         return  self.magic[magic_spell_index]["cost"]
 
     def choose_action(self):
-        actions_length = len(self.actions)
-        indexes = range(1, actions_length)
+        # actions_length = len(self.actions)
+        # indexes = range(1, actions_length)
 
+        # print("Actions: ")
+
+        # for index, action in zip(indexes, self.actions):
+        #     print(f"{index}: {action.name}")
         print("Actions: ")
 
-        for index, action in zip(indexes, self.actions):
-            print(f"{index}: {action.name}")
+        for action in self.actions:
+            print(f"{action.value}: {action.name}")
 
     def choose_magic(self):
         magic_length = len(self.magic)
