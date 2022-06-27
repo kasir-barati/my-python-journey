@@ -1,5 +1,6 @@
 from random import randrange
 from ..enums.actions import Action
+from ..types.magic import Magic
 
 
 class Person:
@@ -10,7 +11,7 @@ class Person:
     attack_low: int
     attack_high: int
     defense: int
-    magic: int
+    magic: Magic
     actions: Action
     
     def __init__(
@@ -19,7 +20,7 @@ class Person:
             mp: int,
             attack: int,
             defense: int,
-            magic: int):
+            magic: Magic):
         self.attack_high = attack + 10
         self.attack_low = attack - 10
         self.defense = defense
