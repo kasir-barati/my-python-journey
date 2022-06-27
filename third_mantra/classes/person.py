@@ -101,8 +101,8 @@ class Person:
 
         print("Magics: ")
 
-        for index in range(1, magic_length):
+        for index in range(0, magic_length):
             spell_name = self.get_spell_name(index)
             spell_cost = self.get_spell_cost(index)
 
-            print(f"{index}: {spell_name}(cost: {spell_cost})")
+            print(f"{index + 1}: {spell_name}(cost: {spell_cost})")
