@@ -28,11 +28,26 @@ def main():
         print_player_and_enemy_status(player, wizard)
         print("\n\r------------------------\n\r")
 
-        if player.get_hp == 0 or wizard.get_hp == 0:
+        if is_battle_over([player, wizard]):
             break
 
     print_player_and_enemy_status(player, wizard)
+
+
+def is_battle_over(fighters: list[Person]):
+    for fighter in fighters:
+        if fighter.get_hp() == 0:
+            message = style_me(
+                f"{fighter.name} is dead",
+                is_failed=True,
+                is_bold=True
+            )
+            print(message)
+
+            return True;
     
+    return False;
+
 
 def do_attack_or_magic(person: Person) -> int:
     person.choose_action()
