@@ -11,8 +11,8 @@ class Person:
     attack_low: int
     attack_high: int
     defense: int
-    magic: Magic
-    actions: Action
+    magic: list[Magic]
+    actions: list[Action]
     
     def __init__(
             self, 
@@ -20,7 +20,7 @@ class Person:
             mp: int,
             attack: int,
             defense: int,
-            magic: Magic):
+            magic: list[Magic]):
         self.attack_high = attack + 10
         self.attack_low = attack - 10
         self.defense = defense
