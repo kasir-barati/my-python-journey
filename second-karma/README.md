@@ -49,3 +49,9 @@
 -   No `new` keyword
     -   `enemy = Enemy()`
 -   `__init__` is a special method who is called when we create a new instance of our class. In other word it is the venerable `constructor`. It can accepts parameters to initialize parameters.
+
+# Import from local modules
+
+-   Create an `__init__.py` which is empty
+-   To import local file and prevent misunderstanding we need to use `..` or `.`
+    -   But in my code it does not work. Why? IDK. But I will understand it.

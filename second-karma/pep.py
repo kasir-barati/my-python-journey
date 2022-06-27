@@ -1,5 +1,6 @@
 import os
 import sys
+from .math.fibonacci import Fibonacci
 
 def find_all():
     print()
