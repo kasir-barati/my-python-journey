@@ -5,12 +5,14 @@ from ..types.magic import Magic
 
 class Person:
     def __init__(
-            self, 
+            self,
+            name: str,
             hp: int, 
             mp: int,
             attack: int,
             defense: int,
             magics: list[Magic]) -> None:
+        self.name = name
         self.attack_high = attack + 10
         self.attack_low = attack - 10
         self.defense = defense
