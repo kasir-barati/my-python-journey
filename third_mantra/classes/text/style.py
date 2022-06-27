@@ -5,5 +5,3 @@ class Style(Enum):
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-
-print(type(Style.HEADER.value))

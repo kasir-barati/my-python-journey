@@ -1,5 +1,7 @@
 from .classes.person import Person
 from .types.magic import Magic
+from .classes.my_print import my_print
+
 
 magics: list[Magic] = [
     {"name": "Fire", "cost": 10, "damage": 60},
@@ -9,11 +11,10 @@ magics: list[Magic] = [
 mage = Person(460, 65, 60, 34, magics)
 wizard = Person(1200, 61, 67, 74, magics)
 
-print(mage.generate_damage())
-print(mage.generate_damage())
-print(mage.generate_spell_damage(0))
-print(mage.generate_spell_damage(1))
-print(mage.take_damage(54))
-print(mage.take_damage(80))
-mage.choose_action()
-mage.choose_magic()
+
+my_print("An enemy attacks!", is_failed=True, is_bold=True)
+
+
+# while True:
+#     my_print()
+
