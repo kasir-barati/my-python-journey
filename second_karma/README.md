@@ -55,3 +55,24 @@
 -   Create an `__init__.py` which is empty
 -   To import local file and prevent misunderstanding we need to use `..` or `.`
     -   But in my code it does not work. Why? IDK. But I will understand it.
+        -   [I find answer here](https://discord.com/channels/238666723824238602/308729304949194752/990825149559369728)
+        -   What's happening here is a byproduct of the way you are launching python
+            -   Side note: I did launch like this: `$ python3 second-karma/import.py`
+        -   So, what's happening here is a byproduct of the way you are launching python
+            -   What is byproduct?
+                -   Python has a concept of packages, which is basically a folder containing one or more modules, and zero-or-more packages.
+                -   When we launch python, there are two ways of doing it:
+                    -   Asking python to **execute a specific module** (`python3 path/to/file.py`).
+                    -   Asking python to **execute a package**.
+                -   The issue is that `import.py` makes reference to importing `.math`
+                    -   The `.math` in this context means "go find a module/package in the current package with the name math"
+                    -   Trouble:
+                        -   When I execute as `$ python3 second-karma/import.py` I was executing a module, not a package. thus python has no idea what `.` means in this context
+                        -   Secondarily, `second-karma` isn't a valid python name, so it cannot be a package.
+                        -   Fix:
+                            ```cmd
+                            mv second-karma second_karma  # rename directory to be a valid python name
+                            touch second_karma/__init__.py  # ensure second_karma can be treated as a package
+                            python3 -m second_karma.import
+                            ```
+                        -   Now `import.py` is of parent package `second_karma`, and thus your relative import will work.
