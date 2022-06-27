@@ -29,6 +29,34 @@
     ```py
     # TODO
     ```
+-   [Modules/packages naming convention](https://peps.python.org/pep-0008/#package-and-module-names)
+    -   short, all lowercase
+    -   Do not use underscore if you can do namespacing. This is just my comprehension, Do not take it as something which reflects a PEP guideline.
+        ```
+        math_sum/
+            __init__.py
+            sum.py
+        math_multiply/
+            __init__.py
+            multiply.py
+        ```
+        And then doing this:
+        ```py
+        from .math_sum.sum import sum
+        from .math_multiply.multiply import multiply
+        ```
+        **Instead**
+        ```
+        math/
+            __init__.py
+            sum.py
+            multiply.py
+        ```
+        and then do this:
+        ```py
+        from .math.sum import sum
+        from .math.multiply import multiply
+        ```
 -   Functions
     -   [lowercase, with words separated by underscores](https://peps.python.org/pep-0008/#function-and-variable-names)
     -   [Indentation](https://peps.python.org/pep-0008/#indentation)

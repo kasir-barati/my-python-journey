@@ -1,5 +1,4 @@
 from .math.fibonacci import Fibonacci
-# from math.fibonacci import Fibonacci
 
 
 fib = Fibonacci()
