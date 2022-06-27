@@ -1,6 +1,6 @@
 from .classes.person import Person
 from .types.magic import Magic
-from .classes.my_print import my_print
+from .classes.style_me import style_me
 
 
 magics: list[Magic] = [
@@ -12,7 +12,9 @@ mage = Person(460, 65, 60, 34, magics)
 wizard = Person(1200, 61, 67, 74, magics)
 
 
-my_print("An enemy attacks!", is_failed=True, is_bold=True)
+a = style_me("An enemy attacks!", is_failed=True, is_bold=True)
+b = style_me("We deffenced!", is_succeed=True, is_bold=True)
+print(a+b)
 
 
 # while True:

@@ -3,7 +3,7 @@ from .text.color import Color
 from .text.style import Style
 
 
-def my_print(
+def style_me(
         message: str,
         *, 
         is_header: Optional[bool]=None,
@@ -34,5 +34,5 @@ def my_print(
     final_text += message
     final_text += end
 
-    print(final_text)
+    return final_text
 
