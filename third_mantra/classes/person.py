@@ -29,10 +29,18 @@ class Person:
     def generate_spell_damage(
             self, 
             magic_spell_index: int) -> int:
+        # DBC check person's mp
         magic_spell_damage_low = self.magics[magic_spell_index]["damage"] - 5
         magic_spell_damage_high = self.magics[magic_spell_index]["damage"] + 5
-
         magic_spell_cost = self.get_spell_cost(magic_spell_index)
+
+        current_mp = self.get_mp();
+
+        if current_mp < magic_spell_cost:
+            # I could also just return 0 and do nothing. 
+            # But I think error is better.
+            raise Exception(f"You're out of mp, {self.name}!") 
+
         self.reduce_mp(magic_spell_cost)
         
         return randrange(magic_spell_damage_low, magic_spell_damage_high)
