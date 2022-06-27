@@ -10,7 +10,7 @@ class Person:
             mp: int,
             attack: int,
             defense: int,
-            magic: list[Magic]):
+            magic: list[Magic]) -> None:
         self.attack_high = attack + 10
         self.attack_low = attack - 10
         self.defense = defense
@@ -21,19 +21,23 @@ class Person:
         self.magic = magic
         self.actions = [Action.ATTACK, Action.MAGIC]
     
-    def generate_damage(self):
+    def generate_damage(self) -> int:
         return randrange(self.attack_low, self.attack_high)
 
-    def generate_spell_damage(self, magic_spell_index: int):
-        magic_spell_damage_low = self.magic[magic_spell_index]["damage"] - 5
-        magic_spell_damage_high = self.magic[magic_spell_index]["damage"] + 5
+    def generate_spell_damage(
+            self, 
+            magic_spell_index: int) -> int:
+        magic_spell_damage_low = self.magics[magic_spell_index]["damage"] - 5
+        magic_spell_damage_high = self.magics[magic_spell_index]["damage"] + 5
 
         magic_spell_cost = self.get_spell_cost(magic_spell_index)
         self.reduce_mp(magic_spell_cost)
         
         return randrange(magic_spell_damage_low, magic_spell_damage_high)
 
-    def take_damage(self, damage: int):
+    def take_damage(
+            self, 
+            damage: int) -> int|None:
         if self.hp == 0:
             # TODO: DBC
             # TODO: unit test
@@ -47,7 +51,9 @@ class Person:
 
         return self.hp
     
-    def heal(self, hp: int) -> None:
+    def heal(
+            self, 
+            hp: int) -> None:
         if self.hp >= hp:
             return
         self.hp += hp
@@ -67,13 +73,17 @@ class Person:
     def reduce_mp(self, mp: int) -> None: 
         self.mp -= mp
     
-    def get_spell_name(self, magic_spell_index: int) -> str:
+    def get_spell_name(
+            self,
+            magic_spell_index: int) -> str:
         return  self.magic[magic_spell_index]["name"]
 
-    def get_spell_cost(self, magic_spell_index: int) -> int:
+    def get_spell_cost(
+            self,
+            magic_spell_index: int) -> int:
         return  self.magic[magic_spell_index]["cost"]
 
-    def choose_action(self):
+    def choose_action(self) -> None:
         # actions_length = len(self.actions)
         # indexes = range(1, actions_length)
 
@@ -86,7 +96,7 @@ class Person:
         for action in self.actions:
             print(f"{action.value}: {action.name}")
 
-    def choose_magic(self):
+    def choose_magic(self) -> None:
         magic_length = len(self.magic)
 
         print("Magics: ")
