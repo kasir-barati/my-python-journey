@@ -10,7 +10,7 @@ class Person:
             mp: int,
             attack: int,
             defense: int,
-            magic: list[Magic]) -> None:
+            magics: list[Magic]) -> None:
         self.attack_high = attack + 10
         self.attack_low = attack - 10
         self.defense = defense
@@ -18,7 +18,7 @@ class Person:
         self.max_hp = hp
         self.mp = mp
         self.max_mp = mp
-        self.magic = magic
+        self.magics = magics
         self.actions = [Action.ATTACK, Action.MAGIC]
     
     def generate_damage(self) -> int:
@@ -76,12 +76,12 @@ class Person:
     def get_spell_name(
             self,
             magic_spell_index: int) -> str:
-        return  self.magic[magic_spell_index]["name"]
+        return  self.magics[magic_spell_index]["name"]
 
     def get_spell_cost(
             self,
             magic_spell_index: int) -> int:
-        return  self.magic[magic_spell_index]["cost"]
+        return  self.magics[magic_spell_index]["cost"]
 
     def choose_action(self) -> None:
         # actions_length = len(self.actions)
@@ -97,7 +97,7 @@ class Person:
             print(f"{action.value}: {action.name}")
 
     def choose_magic(self) -> None:
-        magic_length = len(self.magic)
+        magic_length = len(self.magics)
 
         print("Magics: ")
 
