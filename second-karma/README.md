@@ -41,3 +41,11 @@
 -   Tabs or Spaces? **spaces**
 -   Maximum line character is 79 character
 -   [Avoid extraneous whitespace in the following situations](https://peps.python.org/pep-0008/#whitespace-in-expressions-and-statements)
+
+# Classes
+
+-   A blueprint for having the same data structure everywhere we need
+-   `self` is the first parameter for every class's method
+-   No `new` keyword
+    -   `enemy = Enemy()`
+-   `__init__` is a special method who is called when we create a new instance of our class. In other word it is the venerable `constructor`. It can accepts parameters to initialize parameters.
