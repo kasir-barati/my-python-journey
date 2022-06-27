@@ -37,6 +37,9 @@ class Person:
         magic_spell_damage_low = self.magic[magic_spell_index]["damage"] - 5
         magic_spell_damage_high = self.magic[magic_spell_index]["damage"] + 5
         
+        magic_spell_cost = self.get_spell_cost(magic_spell_index)
+        self.reduce_mp(magic_spell_cost)
+        
         return randrange(magic_spell_damage_low, magic_spell_damage_high)
 
     def take_damage(self, damage: int):
@@ -52,4 +55,7 @@ class Person:
             self.hp = 0
 
         return self.hp
+
+    def get_spell_cost(self, magic_spell_index: int) -> int:
+        return  self.magic[magic_spell_index]["cost"]
 
