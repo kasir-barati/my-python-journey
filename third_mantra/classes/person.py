@@ -21,7 +21,7 @@ class Person:
             defense: int,
             magic: int):
         self.attack_high = attack + 10
-        self.attack_low = attack + 10
+        self.attack_low = attack - 10
         self.defense = defense
         self.hp = hp
         self.max_hp = hp
