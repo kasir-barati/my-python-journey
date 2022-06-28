@@ -66,35 +66,49 @@ def act(person: Person) -> int|None:
     chosen_action = int(chosen_action)
 
     if chosen_action == Action.ATTACK.value:
-        return person.generate_damage(action=Action.ATTACK)
-    elif chosen_action == Action.MAGIC.value:
+        return person.generate_attack_damage()
+
+    if chosen_action == Action.MAGIC.value:
         person.choose_magic()
-        chose_your_spell_message = style_me(
-            "Chose your spell: ", 
-            is_bold=True,
-            is_purple=True
+        options = person.get_magic_options()
+        chosen_number = take_user_input(
+            "Choose you magic spell: ",
+            options
         )
-        chosen_spell = input(chose_your_spell_message)
-        chosen_spell = int(chosen_spell)
-
-        if chosen_spell == 0:
-            return act(person)
         
-        maximum_valid_magic_index = len(person.magics)
-        chosen_spell = chosen_spell - 1
-        assert chosen_spell in range(0, maximum_valid_magic_index), "Chosen magic is invalid!"
+        if chosen_number == 0:
+            return act(person)
 
-        return person.generate_damage(
-            action=Action.MAGIC, 
-            magic_index=chosen_spell
-        )
-    elif chosen_action == Action.ITEM.value:
+        chosen_number -= 1
+
+        return person.do_magic(chosen_number)
+
+    if chosen_action == Action.ITEM.value:
         person.choose_item()
-    elif chosen_action == 0:
+        options = person.get_item_options()
+        chosen_number = take_user_input(
+            "Choose your item to use: ",
+            options
+        )
+
+        if chosen_number == 0:
+            return act(person)
+
+        chosen_number -= 1
+        
+        result = person.use_item(chosen_number)
+        if result["who"] == "party" or result["who"] == "individual":
+            result["hp"] and person.heal(result["hp"])
+            result["mp"] and person.increase_mp(result["mp"])
+        # FIXME: Grenade cannot be implemented simply
+
+        return
+
+    if chosen_action == 0:
         return act(person)
-    else:
-        raise Exception("Your choice was out of range")
-    
+
+    raise Exception("Your choice was out of range")
+
 
 def print_player_and_enemy_status(player: Person, enemy: Person):
     current_wizard_hp = enemy.get_hp()
@@ -135,8 +149,8 @@ def generate_dummy_item_list() -> list[Item]:
     potion = Potion("Heal 50 HP", 50)
     high_potion = HighPotion("Heal 100 HP", 100)
     super_potion = SuperPortion("Heal 500 HP", 500)
-    elixir = Elixir("Fully restores HP/MP of ones party member", 100)
-    mega_elixir = MegaElixir("Fully restores party's HP/MP", 100)
+    elixir = Elixir("Fully restores HP/MP of ones party member", "full")
+    mega_elixir = MegaElixir("Fully restores party's HP/MP", "full")
     grenade = Grenade("Deals 500 damage", 500)
 
     return [
@@ -147,6 +161,20 @@ def generate_dummy_item_list() -> list[Item]:
         mega_elixir,
         grenade
     ]
+
+
+def take_user_input(message: str, valid_number: list[int]) -> int:
+    choose_message = style_me(
+        message, 
+        is_bold=True,
+        is_purple=True
+    )
+    chosen_number = int(input(choose_message))
+    
+    assert chosen_number in valid_number, "Chosen number is invalid!"
+
+    return chosen_number
+
 
 main()
 

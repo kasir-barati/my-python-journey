@@ -1,5 +1,6 @@
 from typing import Optional
 from random import randrange
+from ..types.use_item import UseItem
 from ..classes.inventory import Item
 from ..enums.actions import Action
 # from ..types.magic import Magic
@@ -29,41 +30,35 @@ class Person:
         self.magics = magics
         self.actions = [Action.ATTACK, Action.MAGIC, Action.ITEM]
         self.items = items
-    
-    def generate_damage(
-            self,
-            *,
-            action: Action,
-            magic_index: Optional[int] = None) -> int|None:
-        # DBC
-        if action not in self.actions:
-            raise Exception(
-                f"Entered actions is not supported ({action.name})"
-            )
+        
+    def use_item(self, item_index: int) -> UseItem:
+        return self.items[item_index].use_item()
 
-        if action == Action.ATTACK:
-            return randrange(self.attack_low, self.attack_high)
-        elif action == Action.MAGIC and magic_index:
-            magic_spell_cost = self.magics[magic_index].cost
-            magic_spell_kind = self.magics[magic_index].kind
-            current_mp = self.get_mp()
-            if current_mp < magic_spell_cost:
-                # I could also just return 0 and do nothing. 
-                # But I think error is better.
-                raise Exception(f"You're out of mp, {self.name}!")             
-            self.reduce_mp(magic_spell_cost)
-            
-            if magic_spell_kind == "black":
-                return self.magics[magic_index].generate_damage()
-            elif magic_spell_kind == "white":
-                increased_hp = self.magics[magic_index].heal()
-                self.heal(increased_hp)
-                return
-            else:
-                raise Exception("Unexpected magic kind.")
+    def do_magic(self, magic_index: int) -> int|None:
+        magic_spell_cost = self.magics[magic_index].cost
+        current_mp = self.get_mp()
+        if current_mp < magic_spell_cost:
+            # I could also just return 0 and do nothing. 
+            # But I think error is better.
+            raise Exception(f"You're out of mp, {self.name}!")             
 
-        else:
-            raise Exception("Unexpected input received!")
+        magic_spell_kind = self.magics[magic_index].kind
+        
+        if magic_spell_kind not in ["black", "white"]:
+            raise Exception("Unexpected magic kind.")
+
+        self.reduce_mp(magic_spell_cost)
+
+        if magic_spell_kind == "black":
+            return self.magics[magic_index].generate_damage()
+
+        if magic_spell_kind == "white":
+            increased_hp = self.magics[magic_index].heal()
+            self.heal(increased_hp)
+            return
+
+    def generate_attack_damage(self) -> int|None:
+        return randrange(self.attack_low, self.attack_high)
 
     def take_damage(
             self, 
@@ -83,9 +78,12 @@ class Person:
     
     def heal(
             self, 
-            hp: int) -> None:
-        self.hp += hp
-        if self.hp >= self.max_hp:
+            hp: int|str) -> None:
+        # Wrong usage 
+        # if type(hp) == int:
+        if type(hp) is int:
+            self.hp += hp
+        if hp == "full" or self.hp > self.max_hp:
             self.hp = self.max_hp
     
     def increase_mp(
