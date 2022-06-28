@@ -30,7 +30,10 @@ class Person:
         self.magics = magics
         self.actions = [Action.ATTACK, Action.MAGIC, Action.ITEM]
         self.items = items
-        
+
+    def get_item(self, item_index: int) -> Item:
+        return self.items[item_index]
+
     def use_item(self, item_index: int) -> UseItem:
         return self.items[item_index].use_item()
 
