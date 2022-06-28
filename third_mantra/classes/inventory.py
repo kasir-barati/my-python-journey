@@ -1,9 +1,10 @@
+from abc import ABC
 from abc import abstractmethod
 from typing import Optional
 from ..types.use_item import UseItem
 
 
-class Item:
+class Item(ABC):
     def __init__(
             self,
             name: str,
@@ -115,5 +116,5 @@ class Grenade(Item):
         return {
             "hp": self.value,
             "who": "enemy",
-            "mp": self.value,
+            "mp": None,
         }
