@@ -3,6 +3,7 @@ from random import randrange
 from ..enums.actions import Action
 # from ..types.magic import Magic
 from .spell import Spell
+from .style_me import style_me
 
 
 class Person:
@@ -107,15 +108,15 @@ class Person:
 
         # for index, action in zip(indexes, self.actions):
         #     print(f"{index}: {action.name}")
-        print("Actions: ")
+        print(style_me("Actions: ", is_succeed=True))
 
         for action in self.actions:
-            print(f"{action.value}: {action.name}")
+            print(f"\t{action.value}: {action.name}")
 
     def choose_magic(self) -> None:
         magic_length = len(self.magics)
 
-        print("Magics: ")
+        print(style_me("Magics: ", is_blue=True))
 
         for index in range(0, magic_length):
             spell_name = self.magics[index].name
