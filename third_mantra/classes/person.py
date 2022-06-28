@@ -1,5 +1,6 @@
 from typing import Optional
 from random import randrange
+from ..classes.inventory import Item
 from ..enums.actions import Action
 # from ..types.magic import Magic
 from .spell import Spell
@@ -15,7 +16,8 @@ class Person:
             attack: int,
             defense: int,
             # magics: list[Magic]
-            magics: list[Spell]) -> None:
+            magics: list[Spell],
+            items: list[Item]) -> None:
         self.name = name
         self.attack_high = attack + 10
         self.attack_low = attack - 10
@@ -25,7 +27,8 @@ class Person:
         self.mp = mp
         self.max_mp = mp
         self.magics = magics
-        self.actions = [Action.ATTACK, Action.MAGIC]
+        self.actions = [Action.ATTACK, Action.MAGIC, Action.ITEM]
+        self.items = items
     
     def generate_damage(
             self,
@@ -122,5 +125,15 @@ class Person:
             spell_name = self.magics[index].name
             spell_cost = self.magics[index].cost
 
-            print(f"{index + 1}: {spell_name}(cost: {spell_cost})")
+            print(f"\t{index + 1}: {spell_name}(cost: {spell_cost})")
+
+    def choose_item(self) -> None:
+        items_length = len(self.items)
+
+        print(style_me("Items: ", is_failed=True))
+
+        for index in range(0, items_length):
+            # self.items[index].__dir__() interchangeable 
+            # with dir(self.items[index])
+            print(f"\t{index + 1}: {vars(self.items[index])}")
 
