@@ -87,6 +87,15 @@ class Person:
         self.hp += hp
         if self.hp >= self.max_hp:
             self.hp = self.max_hp
+    
+    def increase_mp(
+            self,
+            mp: int|str):
+        if type(mp) is int:
+            self.mp += mp
+        if mp == "full" or self.mp > self.max_mp:
+            self.mp = self.max_mp
+
 
     def get_hp(self) -> int:
         return self.hp
