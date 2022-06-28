@@ -99,7 +99,11 @@ class Person:
         return list(range(1, maximum_valid_magic_index))
 
     def get_item_options(self) -> list[int]:
-        maximum_valid_item_index = len(self.items)
+        # README: I have to do that +1 because event due this
+        # len method returns the correct number I do create a
+        # list out of it which starts from 1, So the result 
+        # would be lessen the expected result by one number
+        maximum_valid_item_index = len(self.items) + 1
         return list(range(1, maximum_valid_item_index))
 
     def get_hp(self) -> int:
