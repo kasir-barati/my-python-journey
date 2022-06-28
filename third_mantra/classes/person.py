@@ -1,5 +1,6 @@
 from typing import Optional
 from random import randrange
+from ..types.person_item import PersonItem
 from ..types.use_item import UseItem
 from ..classes.inventory import Item
 from ..enums.actions import Action
@@ -18,7 +19,7 @@ class Person:
             defense: int,
             # magics: list[Magic]
             magics: list[Spell],
-            items: list[Item]) -> None:
+            items: list[PersonItem]) -> None:
         self.name = name
         self.attack_high = attack + 10
         self.attack_low = attack - 10
@@ -32,10 +33,22 @@ class Person:
         self.items = items
 
     def get_item(self, item_index: int) -> Item:
-        return self.items[item_index]
+        return self.items[item_index]["item"]
 
-    def use_item(self, item_index: int) -> UseItem:
-        return self.items[item_index].use_item()
+    def does_exists_item(self, item_index: int) -> bool:
+        return True if self.items[item_index]["count"] > 0 else False
+
+    def item_used_once(self, item_index: int) -> None:
+        if self.does_exists_item(item_index):
+            self.items[item_index]["count"] -= 1
+        else:
+            raise Exception("You're out of selected item.")
+
+    def use_item(self, item_index: int) -> UseItem|None:
+        if self.does_exists_item(item_index):
+            return self.item_used_once(item_index)
+        else:
+            return
 
     def do_magic(self, magic_index: int) -> int|None:
         magic_spell_cost = self.magics[magic_index].cost
@@ -156,5 +169,7 @@ class Person:
         for index in range(0, items_length):
             # self.items[index].__dir__() interchangeable 
             # with dir(self.items[index])
-            print(f"\t{index + 1}: {vars(self.items[index])}")
+            item = vars(self.items[index]['item'])
+            count = self.items[index]['count']
+            print(f"\t{index + 1}: item: {item}, count: {count}")
 

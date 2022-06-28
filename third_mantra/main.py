@@ -1,3 +1,4 @@
+from third_mantra.types.person_item import PersonItem
 from .classes.person import Person
 # from .types.magic import Magic
 from .classes.spell import Spell
@@ -13,10 +14,22 @@ from .enums.actions import Action
 
 
 def main():
-    magics = generate_dummy_magic_list()
-    items = generate_dummy_item_list()
-    player = Person("Kasir", 460, 65, 60, 34, magics, items)
-    wizard = Person("Sun", 1200, 61, 67, 74, magics, items)
+    # Due to pass by reference we have to create
+    # new objects.
+    player_magics = generate_dummy_magic_list()
+    wizard_magics = generate_dummy_magic_list()
+    player_items = generate_dummy_item_list()
+    wizard_items = generate_dummy_item_list()
+    player = Person(
+        "Kasir", 460, 65, 
+        60, 34, player_magics, 
+        player_items
+    )
+    wizard = Person(
+        "Sun", 1200, 61, 
+        67, 74, wizard_magics, 
+        wizard_items
+    )
 
     initial_app_message = style_me("An enemy attacks!", is_failed=True, is_bold=True)
     print(initial_app_message)
@@ -98,14 +111,19 @@ def act(person: Person) -> int|None:
         
         item = person.get_item(chosen_number)
         result = person.use_item(chosen_number)
-        if item.kind != "attack":
+        if result and item.kind != "attack":
             result["hp"] and person.heal(result["hp"])
             result["mp"] and person.increase_mp(result["mp"])
-        elif item.kind == "attack":
+        elif result and item.kind == "attack":
             assert type(result["hp"]) is int, "Bad return type in result, attack item."
             return result["hp"]
-        # FIXME: Grenade cannot be implemented simply
 
+        message = style_me(
+            "Selected item did not goes into use. Probably you do not have",
+            is_warned=True,
+            is_bold=True
+        )
+        print(message)
         return
 
     if chosen_action == 0:
@@ -149,7 +167,7 @@ def generate_dummy_magic_list() -> list[Spell]:
     ]
 
 
-def generate_dummy_item_list() -> list[Item]:
+def generate_dummy_item_list() -> list[PersonItem]:
     potion = Potion("Heal 50 HP", 50)
     high_potion = HighPotion("Heal 100 HP", 100)
     super_potion = SuperPortion("Heal 500 HP", 500)
@@ -158,12 +176,12 @@ def generate_dummy_item_list() -> list[Item]:
     grenade = Grenade("Deals 500 damage", 500)
 
     return [
-        potion,
-        high_potion,
-        super_potion,
-        elixir,
-        mega_elixir,
-        grenade
+        {"item": potion, "count": 2},
+        {"item": high_potion, "count": 2},
+        {"item": super_potion, "count": 2},
+        {"item": elixir, "count": 2},
+        {"item": mega_elixir, "count": 2},
+        {"item": grenade, "count": 2}
     ]
 
 
