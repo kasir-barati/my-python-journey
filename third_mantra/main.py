@@ -3,6 +3,12 @@ from .classes.person import Person
 from .classes.spell import Spell
 from .classes.style_me import style_me
 from .classes.inventory import Item
+from .classes.inventory import Elixir
+from .classes.inventory import MegaElixir
+from .classes.inventory import Potion
+from .classes.inventory import HighPotion
+from .classes.inventory import SuperPortion
+from .classes.inventory import Grenade
 from .enums.actions import Action
 
 
@@ -126,19 +132,19 @@ def generate_dummy_magic_list() -> list[Spell]:
 
 
 def generate_dummy_item_list() -> list[Item]:
-    potion = Item("Potion", "potion", "Heal 50 HP", 50)
-    high_potion = Item("High Potion", "potion", "Heal 100 HP", 100)
-    super_potion = Item("Super Potion", "potion", "Heal 500 HP", 500)
-    elixer = Item("Elixer", "elixer", "Fully restores HP/MP of ones party member", 9999)
-    mega_elixer = Item("Mega Elixer", "elixer", "Fully restores party's HP/MP", 9999)
-    grenade = Item("Grenade", "attack", "Deals 500 damage", 500)
+    potion = Potion("Heal 50 HP", 50)
+    high_potion = HighPotion("Heal 100 HP", 100)
+    super_potion = SuperPortion("Heal 500 HP", 500)
+    elixir = Elixir("Fully restores HP/MP of ones party member", 100)
+    mega_elixir = MegaElixir("Fully restores party's HP/MP", 100)
+    grenade = Grenade("Deals 500 damage", 500)
 
     return [
         potion,
         high_potion,
         super_potion,
-        elixer,
-        mega_elixer,
+        elixir,
+        mega_elixir,
         grenade
     ]
 

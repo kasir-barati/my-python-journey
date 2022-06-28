@@ -6,3 +6,5 @@ class UseItem(TypedDict):
     hp: Optional[int]
     mp: Optional[int]
     meter: Literal["percentage", "unit"]
+    who: Literal["individual", "party"]
+
