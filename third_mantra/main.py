@@ -96,10 +96,14 @@ def act(person: Person) -> int|None:
 
         chosen_number -= 1
         
+        item = person.get_item(chosen_number)
         result = person.use_item(chosen_number)
-        if result["who"] == "party" or result["who"] == "individual":
+        if item.kind != "attack":
             result["hp"] and person.heal(result["hp"])
             result["mp"] and person.increase_mp(result["mp"])
+        elif item.kind == "attack":
+            assert type(result["hp"]) is int, "Bad return type in result, attack item."
+            return result["hp"]
         # FIXME: Grenade cannot be implemented simply
 
         return
@@ -170,7 +174,7 @@ def take_user_input(message: str, valid_number: list[int]) -> int:
         is_purple=True
     )
     chosen_number = int(input(choose_message))
-    
+
     assert chosen_number in valid_number, "Chosen number is invalid!"
 
     return chosen_number
