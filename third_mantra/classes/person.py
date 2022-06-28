@@ -96,6 +96,13 @@ class Person:
         if mp == "full" or self.mp > self.max_mp:
             self.mp = self.max_mp
 
+    def get_magic_options(self) -> list[int]: 
+        maximum_valid_magic_index = len(self.magics)
+        return list(range(1, maximum_valid_magic_index))
+
+    def get_item_options(self) -> list[int]:
+        maximum_valid_item_index = len(self.items)
+        return list(range(1, maximum_valid_item_index))
 
     def get_hp(self) -> int:
         return self.hp
