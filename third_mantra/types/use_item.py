@@ -3,8 +3,7 @@ from typing import Optional
 from typing import Literal
 
 class UseItem(TypedDict):
-    hp: Optional[int]
-    mp: Optional[int]
-    meter: Literal["percentage", "unit"]
-    who: Literal["individual", "party"]
+    hp: Optional[int|str]
+    mp: Optional[int|str]
+    who: Literal["individual", "party", "enemy"]
 
