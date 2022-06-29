@@ -83,6 +83,20 @@
 
 # Create a virtual environment
 
--   `python3 -m venv forth_mandala`
--   Packages installed in an isolated location for `forth_mandala` application, rather than being installed globally.
--   I just gave up from this option for now
+-   **Note:** They are just meant to be and environment for my project's packages and dependencies. Not for my project. I mean nobody wanna build their app inside these virtual envs.
+-   venv
+    -   `python3 -m venv forth_mandala`
+    -   Packages installed in an isolated location for `forth_mandala` application, rather than being installed globally.
+    -   I just gave up from this option for now
+-   [Virtualenv](https://virtualenv.pypa.io/en/stable/index.html)
+    -   A way to separate different project envs from each other
+    -   Create isolated Python environments
+    -   It has been integrated into the standard library
+    -   `pip3 install virtualenv`
+    -   `virtualenv project_name`
+    -   `source project_name/bin/activate` to activate the isolated env.
+        -   `which python3` should show you a path to your local env
+    -   `pip3 freeze --local > requirements.txt` to generate requirements.txt which based on my observation is the equivalent of `package.json`
+    -   To get out of your virtual env you can issue `deactivate` in the terminal
+    -   Create a env with a specific python version `pip3 -p /usr/bin/python2.6 app_name`
+    -   To install packages using `requirements.txt` we can do this: `pip3 install -r requirements.txt`
