@@ -1,4 +1,4 @@
-from third_mantra.types.person_item import PersonItem
+from .types.person_item import PersonItem
 from .classes.person import Person
 # from .types.magic import Magic
 from .classes.spell import Spell
@@ -14,41 +14,31 @@ from .enums.actions import Action
 
 
 def main():
-    # Due to pass by reference we have to create
-    # new objects.
-    player_magics = generate_dummy_magic_list()
-    wizard_magics = generate_dummy_magic_list()
-    player_items = generate_dummy_item_list()
-    wizard_items = generate_dummy_item_list()
-    player = Person(
-        "Kasir", 460, 65, 
-        60, 34, player_magics, 
-        player_items
-    )
-    wizard = Person(
-        "Sun", 1200, 61, 
-        67, 74, wizard_magics, 
-        wizard_items
-    )
+    players = generate_dummy_person("Jesus", 2)
+    enemies = generate_dummy_person("Zeus", 2)
 
     initial_app_message = style_me("An enemy attacks!", is_failed=True, is_bold=True)
     print(initial_app_message)
+    
 
     while True:
-        player.print_hp_mp()
-        wizard.print_hp_mp()
-        player_generated_damage = act(player)
-        if player_generated_damage:
-            wizard.take_damage(player_generated_damage)
+        for [player, enemy] in zip(players, enemies): 
+            enemy.print_hp_mp()
+            player.print_hp_mp()
 
-        wizard_generated_damage = act(wizard)
-        if wizard_generated_damage:
-            player.take_damage(wizard_generated_damage)
+        for [player, enemy] in zip(players, enemies):
+            player_generated_damage = act(player)
+            if player_generated_damage:
+                enemy.take_damage(player_generated_damage)
 
-        print("\n\r------------------------\n\r")
+            wizard_generated_damage = act(enemy)
+            if wizard_generated_damage:
+                player.take_damage(wizard_generated_damage)
 
-        if is_battle_over([player, wizard]):
-            break
+            print("\n\r------------------------\n\r")
+
+            if is_battle_over([player, enemy]):
+                break
 
 
 def is_battle_over(fighters: list[Person]):
@@ -176,6 +166,25 @@ def take_user_input(message: str, valid_number: list[int]) -> int:
     assert chosen_number in valid_number, "Chosen number is invalid!"
 
     return chosen_number
+
+
+def generate_dummy_person(
+        prefix_name: str, 
+        how_many: int) -> list[Person]:
+    players: list[Person] = []
+    # Due to pass by reference we have to create
+    # new objects.
+    for index in range(0, how_many):
+        player_magics = generate_dummy_magic_list()
+        player_items = generate_dummy_item_list()
+        player = Person(
+            f"{prefix_name}_{index+1}", 460, 65, 
+            60, 34, player_magics, 
+            player_items
+        )
+        players.append(player)
+    
+    return players
 
 
 main()
