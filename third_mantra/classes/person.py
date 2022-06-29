@@ -173,3 +173,12 @@ class Person:
             count = self.items[index]['count']
             print(f"\t{index + 1}: item: {item}, count: {count}")
 
+    def print_hp_mp(self):
+        hp = f"{self.get_hp()}/{self.get_max_hp()}"
+        mp = f"{self.get_mp()}/{self.get_max_mp()}"
+        person_hp_mp = style_me(
+            f"{self.name}: \t HP[{hp}] \t MP[{mp}]",
+            is_succeed=True, is_bold=True
+        )
+        print(person_hp_mp)
+

@@ -35,6 +35,8 @@ def main():
     print(initial_app_message)
 
     while True:
+        player.print_hp_mp()
+        wizard.print_hp_mp()
         player_generated_damage = act(player)
         if player_generated_damage:
             wizard.take_damage(player_generated_damage)
@@ -43,13 +45,10 @@ def main():
         if wizard_generated_damage:
             player.take_damage(wizard_generated_damage)
 
-        print_player_and_enemy_status(player, wizard)
         print("\n\r------------------------\n\r")
 
         if is_battle_over([player, wizard]):
             break
-
-    print_player_and_enemy_status(player, wizard)
 
 
 def is_battle_over(fighters: list[Person]):
@@ -130,25 +129,6 @@ def act(person: Person) -> int|None:
         return act(person)
 
     raise Exception("Your choice was out of range")
-
-
-def print_player_and_enemy_status(player: Person, enemy: Person):
-    current_wizard_hp = enemy.get_hp()
-    current_wizard_mp = enemy.get_mp()
-    current_player_hp = player.get_hp()
-    current_player_mp = player.get_mp()
-    wizard_hp_message = style_me(
-        f"Wizard status: hp = {current_wizard_hp}, mp = {current_wizard_mp}",
-        is_underlined=True,
-        is_turquoise=True
-    )
-    player_hp_message = style_me(
-        f"Your status: hp = {current_player_hp}, mp = {current_player_mp}",
-        is_underlined=True,
-        is_turquoise=True
-    )
-    
-    print(wizard_hp_message + '. ' + player_hp_message)
 
 
 def generate_dummy_magic_list() -> list[Spell]:
