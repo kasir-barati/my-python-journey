@@ -1,5 +1,19 @@
 # Working with file system
 
+-   **Important note**
+    -   Do not name your python file the same as the package you've importing. Unless you will get this error:
+        ```cmd
+        $ python3 forth_mandala/requests.py
+        Traceback (most recent call last):
+          File "/home/kasir/my-python-journey/forth_mandala/requests.py", line 1, in <module>
+            import requests
+          File "/home/kasir/my-python-journey/forth_mandala/requests.py", line 8, in <module>
+            main()
+          File "/home/kasir/my-python-journey/forth_mandala/requests.py", line 4, in main
+            users = requests.get("https://reqres.in/api/users?page=1")
+        AttributeError: partially initialized module 'requests' has no attribute 'get' (most likely due to a circular import)
+        ```
+        As it is obvious my python script name was the same as `requests` which is a 3rd part installed package. [Ref to read more](https://exerror.com/attributeerror-partially-initialized-module-requests-has-no-attribute-get/).
 -   If you just pass the file name and do not specify the file path, it will save the file inside the current directory that `python3` command gets executed.
     ```py
     my_file = open("new-file.md", "w", encoding="utf8")
