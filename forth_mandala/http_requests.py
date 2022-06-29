@@ -3,7 +3,9 @@ import requests
 
 
 def main():
-    response = requests.get("https://reqres.in/api/users?page=1")
+    # https://reqres.in/api/users?page=1
+    params = {"page": 1}
+    response = requests.get("https://reqres.in/api/users", params)
     data = {
         "statusCode": response.status_code,
         "url": response.url,
