@@ -75,3 +75,5 @@
         print(n) # 1
         ```
     2. Passed by reference: what we have: `print_player_and_enemy_status`. If in this function you change the values of person or enemy it will affect the original passed ones.
+
+# 05 - 046
