@@ -110,6 +110,14 @@
     -   `virtualenv project_name`
     -   `source project_name/bin/activate` to activate the isolated env.
         -   `which python3` should show you a path to your local env
+        -   Config VSCode to do this steps automatically for use:
+            -   Open the VSCode integrated terminal
+            -   issue this command: `source bin/activate`
+            -   issue `which python3` and copy the path
+            -   Press `ctrl+shift+p`
+            -   type: python interpreter
+            -   choose first option: Enter interpreter path
+            -   Paste what you have copied. From now on each integrated terminal on the project activate virtual env.
     -   `pip3 freeze --local > requirements.txt` to generate requirements.txt which based on my observation is the equivalent of `package.json`
     -   To get out of your virtual env you can issue `deactivate` in the terminal
     -   Create a env with a specific python version `pip3 -p /usr/bin/python2.6 app_name`
