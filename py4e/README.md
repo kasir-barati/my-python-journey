@@ -132,3 +132,74 @@ print(f"{line:20}") # "The mill's closed   "
 a = dict(x=2)
 print(f"abc {a["x"]} def") # 'abc 2 def'
 ```
+
+# `with`
+
+The `with` statement is used to wrap the execution of a block with methods defined by a context manager. This allows common _try…except…finally_ usage patterns to be encapsulated for convenient reuse.
+
+![With VS try...except](./with.png)
+
+# List comprehension
+
+A concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.
+
+| Traditional way               | lambda                                           | short version of lambda               |
+| ----------------------------- | ------------------------------------------------ | ------------------------------------- |
+| ![img](./traditional-way.png) | `squares = list(map(lambda x: x**2, range(10)))` | `squares = [x**2 for x in range(10)]` |
+
+It consist of _brackets_ containing:
+
+1. An _expression_.
+2. Followed by a `for` clause.
+3. Then zero or more `for` or `if` clauses.
+
+The result will be a new list resulting from evaluating the expression in the context of the for and if clauses which follow it.
+
+| Traditional way                    | Short version                                          |
+| ---------------------------------- | ------------------------------------------------------ |
+| ![img](./traditional-way-comb.png) | `[(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]` |
+
+> [!NOTE]
+>
+> Pay attention to how the order of the `for` and `if` statements is the same in both these snippets.
+
+```py
+[ (value, key) for key, value in word_counter.items() ]
+```
+
+In this lovely code we are not using append or listing the list elements one by one. But instead we are giving it an expression that acts as a generator. So it loop over the `word_counter` and reverse its key-value pair in new tuples. And for each key-value it adds a new reversed tuple to the list.
+
+So this list is manufactured on the fly. And JFI the sorted accepts a list and a list of tuples are sortable too.
+
+## Tuples
+
+-   A tuple consists of a number of values separated by commas.
+    ```py
+    t = 12345, 54321, 'hello!'
+    ```
+-   They are immutable but they can contain mutable objects.
+    ```py
+    t = 12345, 54321, 'hello!'
+    t[0] = 88888
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 2, in <module>
+    # TypeError: 'tuple' object does not support item assignment
+    ```
+-   They may be nested
+    ```py
+    t = 12345, 54321, 'hello!'
+    u = t, (1, 2, 3, 4, 5) # ((12345, 54321, 'hello!'), (1, 2, 3, 4, 5))
+    ```
+-   Empty tuples are constructed by an empty pair of parentheses
+    ```py
+    empty_tuple = ()
+    ```
+-   A tuple with one item is constructed by following a value with a comma
+    ```py
+    single_tuple = 'hello',
+    ```
+-   Sequence unpacking: It requires that there are as many variables on the left side of the equals sign as there are elements in the sequence.
+    ```py
+    t = 12345, 54321, 'hello!'
+    x, y, z = t
+    ```
