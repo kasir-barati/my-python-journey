@@ -12,6 +12,12 @@ You might wanna ask what is interpreter, in the layman's terms (tell me like i a
 
 ![Interpreter as translator](./assets/interpreter-translator.png)
 
+> [!NOTE]
+>
+> Number systems: binary, octal, decimal, hexadecimal
+>
+> ![Number systems](./assets/number-systems.png)
+
 ## Windows
 
 ![Downloading Python for Windows](./assets/win-download-process.png)
@@ -44,9 +50,13 @@ Type `python --version` and hit enter:
 
 There might be others who use things like [PyCharm](https://www.jetbrains.com/pycharm/), [Intellij IDEA](https://www.jetbrains.com/idea/).
 
+> [!NOTE]
+>
+> IDE stands for **I**ntegrated **D**evelopment **E**nvironment.
+
 ## Download & installation
 
-1. Download it from [here](https://code.visualstudio.com/download).
+1. Download it from [here](https://code.visualstudio.com/).
 2. Open it and accept terms of service:
 
    ![accepting terms of service](./assets/install-vscode-terms-of-service.png)
@@ -81,6 +91,9 @@ There might be others who use things like [PyCharm](https://www.jetbrains.com/py
    ![alt text](./assets/create-new-folder.png)
 
 2. Open it and inside it create a new directory called "HelloWorld".
+
+   BTW this is a naming convention ![naming conventions](./assets/naming-conventions.png)
+
 3. Open "HelloWorld" with VSCode.
 
    You can do it inside file explorer:
@@ -106,7 +119,8 @@ There might be others who use things like [PyCharm](https://www.jetbrains.com/py
 
 - Press `ctrl + z` to undo your changes. ![ctrl + z](./assets/ctrl-plus-z.png)
 - Press `ctrl + y` to redo. ![ctrl + y](./assets/ctrl-plus-y.png)
-- Press `ctrl + d` to kill a REPL. ![CTRL+D](image.png)
+- Press `ctrl + d` to kill a REPL. ![CTRL+D](./assets/ctrl-plus-d.png)
+- Press <code>ctrl + `</code> to open terminal (it is called command prompt in windows): ![ctrl + backtick](./assets/ctrl-plus-backtick.png)
 - Press `ctrl + shift + p` to open "command palette". ![ctrl + shift + p](./assets/ctrl-plus-shift-plus-p.png).
 
   - Here we can do things like opening a REPL: ![repl](./assets/repl.png)
