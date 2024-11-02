@@ -132,3 +132,8 @@ Do not be afraid of reading docs. I wanna show you how you could accomplish same
 1. Install VSCode on windows: search in google "Install VSCode on Windows".
 2. How to configure newly installed VSCode for Python in Windows: Search in Google: "VSCode + windows + python".
 3. How to know which short cut does what in VSCode. Google "VSCode shortcuts" or "VSCode shortcuts cheat sheet".
+
+# YouTube/Aparat
+
+- https://youtu.be/qPH9oLuTBQk
+- https://aparat.com/v/eyj6b83
