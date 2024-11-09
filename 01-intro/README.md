@@ -224,3 +224,8 @@ First we're gonna touch the most noteworthy aspects of Python. By the end of thi
 - https://wiki.python.org/moin/BeginnersGuide.
 - https://docs.python.org/3/tutorial/index.html.
 - https://wiki.python.org/moin/BeginnersGuide/Overview.
+
+## YouTube/Aparat
+
+- https://youtu.be/Ts3JhayINiY
+- https://aparat.com/v/rfiu8mf
