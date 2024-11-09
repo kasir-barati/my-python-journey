@@ -1,5 +1,7 @@
 # Installing Python Interpreter
 
+## What is an Interpreter?
+
 You might wanna ask what is interpreter, in the layman's terms (tell me like i am 5), it is a software that:
 
 1. Takes your python code.
@@ -48,7 +50,7 @@ Type `python --version` and hit enter:
 
 # IDE -- VSCode
 
-There might be others who use things like [PyCharm](https://www.jetbrains.com/pycharm/), [Intellij IDEA](https://www.jetbrains.com/idea/).
+There might be others who use things like [PyCharm](https://www.jetbrains.com/pycharm/), [Intellij IDEA](https://www.jetbrains.com/idea/). BTW Python wiki also has somethings to say about this. So if you're interested in their recommendations please read [this](https://wiki.python.org/moin/IntegratedDevelopmentEnvironments).
 
 > [!NOTE]
 >
@@ -125,7 +127,7 @@ There might be others who use things like [PyCharm](https://www.jetbrains.com/py
 
   - Here we can do things like opening a REPL: ![repl](./assets/repl.png)
 
-# Final words
+## Final words
 
 Do not be afraid of reading docs. I wanna show you how you could accomplish same results by just reading VSCode's official documentations:
 
@@ -133,7 +135,91 @@ Do not be afraid of reading docs. I wanna show you how you could accomplish same
 2. How to configure newly installed VSCode for Python in Windows: Search in Google: "VSCode + windows + python".
 3. How to know which short cut does what in VSCode. Google "VSCode shortcuts" or "VSCode shortcuts cheat sheet".
 
-# YouTube/Aparat
+## YouTube/Aparat
 
 - https://youtu.be/qPH9oLuTBQk
 - https://aparat.com/v/eyj6b83
+
+# Python
+
+- "Python" is actually a category of snakes:
+  - It's not the name of a specific species.
+  - It refers to a family of snakes called Pythonidae.
+  - Known for their large size & non-venomous constriction method of hunting.
+- But here we are talking about a programming language :).
+
+## Why Python
+
+### Powerful
+
+- Can be extended/combined with other [programming languages](./glossary.md#programmingLanguageGlossary).
+
+  ![Extension for python, written in C](./assets/pthone-extension-in-c.png)
+
+  Imagine you have a big Lego set with pieces that build almost anything, but there are a few things you want to make that need super-special pieces that aren’t in the set. So, you ask someone who has those special pieces (like shiny or super-strong ones) to build those parts for you. Then, you add them to your Lego set, and now you can build even cooler stuff!
+
+- Extensive standard [library](./glossary.md#libraryGlossary); i.e. large collection of [modules](./glossary.md#moduleGlossary) and packages built into the language.
+  ![Extensive standard library](./assets/python-extensive-builtin-lib.png)
+
+### Versatile
+
+- Can be used in different fields, domains, or types of [applications](./glossary.md#applicationGlossary).
+
+  ![Some of python domains](./assets/some-of-python-domains.png)
+
+- Runs everywhere.
+
+  ![Python runs on Unix, Linux, Windows, Mac, iOS, Android](./assets/python-runs-on.png)
+
+### Easy to learn
+
+- Some blogs, podcasts:
+- [RealPython](https://realpython.com/).
+- [Planet Python](https://planetpython.org/).
+- [Podcast about Python](https://talkpython.fm/).
+- [Mouse vs. Python](https://www.blog.pythonlibrary.org/).
+- Here are some online courses:
+  - [edX](https://www.edx.org/learn/python).
+  - [Python Essentials 1](https://www.netacad.com/courses/python-essentials-1?courseLang=en-US).
+- And if you had any question you can ask in:
+  - [Stackoverflow](https://stackoverflow.com/).
+  - [Reddit's community for Python](https://www.reddit.com/r/Python/).
+
+### Talk more technical
+
+- Is equipped with efficient high-level [data structures](./glossary.md#dataStructureGlossary).
+- Has an effective approach to [Object-Oriented Programming](./glossary.md#objectOrientedProgrammingGlossary).
+
+  - Simplicity and readability: no steep learning curve.
+  - Flexibility with multiple paradigms: sometimes you need to [mix and match](https://www.collinsdictionary.com/dictionary/english/mixdown).
+  - Built-in support for OOP principles.
+
+    ![OOP principles](./assets/oop-principles.png)
+
+- Dynamically typed: no need to explicitly declare variable types, resulting in a faster and easier development experience.
+
+  ![Dynamic typing vs static typing](./assets/dynamically-typed-staticly-typed.png)
+
+- [Interpreted](#what-is-an-interpreter) programming language.
+
+## So what now?
+
+First we're gonna touch the most noteworthy aspects of Python. By the end of this journey we will be able to read and understand Python. Then we can jump into next section which is libraries that we need.
+
+> [!NOTE]
+>
+> My goal here is to equip you with as much as arsenal I can so when you're out fighting your own battle you know how to read docs, ask questions, solve your problems and be a good developer.
+
+### Download and print [this cheatsheet](./assets/cheatsheets/)
+
+## Resources to practice Python
+
+- https://checkio.org.
+- https://www.afterhoursprogramming.com/tutorial/python/python-quiz.
+- https://www.practicepython.org.
+- https://pychallenger.com.
+
+### Refs
+
+- https://wiki.python.org/moin/BeginnersGuide.
+- https://wiki.python.org/moin/BeginnersGuide/Overview.
