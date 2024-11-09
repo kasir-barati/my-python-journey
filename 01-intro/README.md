@@ -174,10 +174,10 @@ Do not be afraid of reading docs. I wanna show you how you could accomplish same
 ### Easy to learn
 
 - Some blogs, podcasts:
-- [RealPython](https://realpython.com/).
-- [Planet Python](https://planetpython.org/).
-- [Podcast about Python](https://talkpython.fm/).
-- [Mouse vs. Python](https://www.blog.pythonlibrary.org/).
+  - [RealPython](https://realpython.com/).
+  - [Planet Python](https://planetpython.org/).
+  - [Podcast about Python](https://talkpython.fm/).
+  - [Mouse vs. Python](https://www.blog.pythonlibrary.org/).
 - Here are some online courses:
   - [edX](https://www.edx.org/learn/python).
   - [Python Essentials 1](https://www.netacad.com/courses/python-essentials-1?courseLang=en-US).
