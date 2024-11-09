@@ -222,4 +222,5 @@ First we're gonna touch the most noteworthy aspects of Python. By the end of thi
 ### Refs
 
 - https://wiki.python.org/moin/BeginnersGuide.
+- https://docs.python.org/3/tutorial/index.html.
 - https://wiki.python.org/moin/BeginnersGuide/Overview.
