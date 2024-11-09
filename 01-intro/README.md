@@ -191,7 +191,7 @@ Do not be afraid of reading docs. I wanna show you how you could accomplish same
 - Has an effective approach to [Object-Oriented Programming](./glossary.md#objectOrientedProgrammingGlossary).
 
   - Simplicity and readability: no steep learning curve.
-  - Flexibility with multiple paradigms: sometimes you need to [mix and match](https://www.collinsdictionary.com/dictionary/english/mixdown).
+  - Flexibility with multiple paradigms: sometimes you need to [mix and match](https://www.collinsdictionary.com/dictionary/english/mix-and-match).
   - Built-in support for OOP principles.
 
     ![OOP principles](./assets/oop-principles.png)
