@@ -99,3 +99,12 @@ Use it:
   ```
 
   You can see a list of them [here](https://docs.python.org/3/library/codecs.html#standard-encodings).
+
+## YouTube/Aparat
+
+- [https://youtu.be/ltUwClOB60o](https://youtu.be/ltUwClOB60o).
+- [https://aparat.com/v/oqzh038](https://aparat.com/v/oqzh038).
+
+## Ref
+
+- [https://docs.python.org/3/tutorial/interpreter.html](https://docs.python.org/3/tutorial/interpreter.html).
