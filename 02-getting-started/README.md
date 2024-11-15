@@ -44,6 +44,10 @@ Use it:
 3. Functions and modules.
 4. Exceptions and user-defined classes.
 
+## Ref
+
+- [https://docs.python.org/3/tutorial/appetite.html#whetting-your-appetite](https://docs.python.org/3/tutorial/appetite.html#whetting-your-appetite).
+
 ## YouTube/Aparat
 
 - [https://aparat.com/v/xlw508e](https://aparat.com/v/xlw508e).
