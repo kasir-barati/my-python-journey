@@ -43,3 +43,8 @@ Use it:
 2. Statements and data types.
 3. Functions and modules.
 4. Exceptions and user-defined classes.
+
+## YouTube/Aparat
+
+- [https://aparat.com/v/xlw508e](https://aparat.com/v/xlw508e).
+- [https://youtu.be/oQrnW7QbZNE](https://youtu.be/oQrnW7QbZNE).

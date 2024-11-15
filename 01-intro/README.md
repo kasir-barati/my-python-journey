@@ -139,8 +139,8 @@ Do not be afraid of reading docs. I wanna show you how you could accomplish same
 
 ## YouTube/Aparat
 
-- https://youtu.be/qPH9oLuTBQk
-- https://aparat.com/v/eyj6b83
+- [https://youtu.be/qPH9oLuTBQk](https://youtu.be/qPH9oLuTBQk).
+- [https://aparat.com/v/eyj6b83](https://aparat.com/v/eyj6b83).
 
 # Python
 
@@ -233,5 +233,5 @@ First we're gonna touch the most noteworthy aspects of Python. By the end of thi
 
 ## YouTube/Aparat
 
-- https://youtu.be/Ts3JhayINiY
-- https://aparat.com/v/rfiu8mf
+- [https://youtu.be/Ts3JhayINiY](https://youtu.be/Ts3JhayINiY).
+- [https://aparat.com/v/rfiu8mf](https://aparat.com/v/rfiu8mf).
