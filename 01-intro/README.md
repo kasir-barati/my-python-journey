@@ -125,7 +125,9 @@ There might be others who use things like [PyCharm](https://www.jetbrains.com/py
 - Press <code>ctrl + `</code> to open terminal (it is called command prompt in windows): ![ctrl + backtick](./assets/ctrl-plus-backtick.png)
 - Press `ctrl + shift + p` to open "command palette". ![ctrl + shift + p](./assets/ctrl-plus-shift-plus-p.png).
 
-  - Here we can do things like opening a REPL: ![repl](./assets/repl.png)
+  - Here we can do things like opening a REPL (learn more about REPL [here](../02-getting-started/README.md#python-repl)).
+
+    ![repl](./assets/repl.png)
 
 ## Final words
 
@@ -147,6 +149,7 @@ Do not be afraid of reading docs. I wanna show you how you could accomplish same
   - It refers to a family of snakes called Pythonidae.
   - Known for their large size & non-venomous constriction method of hunting.
 - But here we are talking about a programming language :).
+- BTW the language is named after the BBC show ["Monty Python's Flying Circus"](https://www.imdb.com/title/tt0063929/).
 
 ## Why Python
 
