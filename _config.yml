@@ -1,8 +1,8 @@
-title: ReactJS
+title: Python
 email: kasir.barati@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome doc for ReactJS. A very nice an practical one extracted from ReactJS official documentation.
-baseurl: "/react" # the repository name
+  Write an awesome doc for Python. A very nice an practical one extracted from Python official documentation.
+baseurl: "/python" # the repository name
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: kasir_barati
 github_username: kasir-barati
