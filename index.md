@@ -5,4 +5,4 @@
 
 # Docs
 
-- [AI roadmap](../roadmaps/AI.md)
+- [AI roadmap](./docs/roadmaps/AI.md)

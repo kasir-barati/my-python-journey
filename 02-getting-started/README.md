@@ -201,3 +201,379 @@ Use it:
 
 - [How computer memory works - Kanawat Senanan](https://youtu.be/p3q5zWCw8J4?si=th34ctRMV0u3Yrob).
 - [Computer Skills Course: Bits, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes (UPDATED VERSION)](https://youtu.be/u4P0LOofEFs?si=bnNIyTUaRmWWvZQn).
+
+## YouTube/Aparat
+
+- [https://youtu.be/5UZ1w6zQIbo](https://youtu.be/5UZ1w6zQIbo).
+- [https://aparat.com/v/ouphbs0](https://aparat.com/v/ouphbs0).
+
+## Informal introduction
+
+- To end a multi-line command in REPL press enter twice.
+- Comments in Python:
+
+  - Start with the hash character: `#`.
+  - Extend to the end of the physical line.
+  - Clarify code.
+  - Ain't interpreted by Python interpreter.
+  - Can be omitted.
+  - Don'ts:
+
+    - Cannot write comment within a string literal.
+
+      ![These ain't comment](./assets/wrong-usage-of-comments.png)
+
+      A hash character within a string literal is just a hash character!
+
+### Python as a Calculator
+
+- Type an expression and it will evaluate it.
+- Expression syntax:
+
+  - The operators `+`, `-`, `*` and `/` can be used to perform arithmetic.
+  - Parentheses (`()`) can be used for grouping.
+
+  ![Basic math operations](./assets/basic-math-ops.png)
+
+### Numbers in Python
+
+- Integer numbers:
+  - Type: `int`.
+  - E.g. `2`, `4`, `20`.
+- Floating point numbers:
+  - Type: `float`.
+  - Have fractional part.
+  - E.g. `5.0`, `1.6`.
+- `Decimal` numbers.
+  - Ideal for precise base-10 arithmetic.
+  - E.g. in financial calculations, do not have errors like: `0.1 + 0.2 != 0.3`.
+  - <details>
+      <summary>Example in Python</summary>
+      <pre lang="python">
+        <code>
+          from decimal import Decimal
+          decimal1 = Decimal('0.1')
+          decimal2 = Decimal('0.2')
+          result = decimal1 + decimal2
+          print(decimal1 + decimal2 == Decimal('0.3')) # True
+          print(decimal1 + decimal2 == 0.3) # False
+          print(0.1 + 0.3 == 0.3) # False
+        </code>
+      </pre>
+      <p>
+        Computers use binary (base-2) to represent numbers. Many decimal fractions (like <code>0.1</code> and <code>0.2</code>) cannot be represented exactly in binary. This results in small precision errors.
+      </p>
+      <pre lang="python"><code>print(0.1 + 0.2) # 0.30000000000000004</code></pre>
+    </details>
+- `Fraction` numbers.
+  - Precise representation of fractions.
+  - Exact rational arithmetic (e.g., `1/3` remains `1/3` instead of an imprecise float like `0.333...`).
+  - <details>
+      <summary>Example in Python</summary>
+      <pre lang="python">
+        <code>
+          from fractions import Fraction
+          fraction1 = Fraction(1, 3) # 1/3
+          fraction2 = Fraction(2, 5) # 2/5
+          result = fraction1 + fraction2 
+          # Fraction addition: 1/3 + 2/5 = 11/15
+          print(f"Fraction addition: {fraction1} + {fraction2} = {result}") 
+        </code>
+      </pre>
+      <p>
+        <code>f""</code> is what we call
+        <a href="./glossary.md#fStringsDefinition">"f-strings"</a>.
+      </p>
+    </details>
+- [Complex numbers](https://docs.python.org/3/library/stdtypes.html#typesnumeric):
+  - A number that has both a real part and an imaginary part.
+  - E.g. `3+4j`.
+
+#### Operators
+
+<table>
+  <tr>
+    <th>Operator</th>
+    <th>+</th>
+    <th>-</th>
+    <th>*</th>
+    <th>/</th>
+    <th>//</th>
+    <th>%</th>
+    <th>**</th>
+    <th>Mixed</th>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>7+3</code></td>
+    <td><code>7-3</code></td>
+    <td><code>7*3</code></td>
+    <td><code>7/3</code></td>
+    <td><code>7//3</code></td>
+    <td><code>7%3</code></td>
+    <td><code>7**3</code></td>
+    <td><code>7*3.2+1</code></td>
+  </tr>
+</table>
+
+---
+
+### Variables
+
+- Assign a value to a variable with `=`.
+- Variable is not "defined" (assigned a value), trying to use it will give you an error.
+  ```python
+  >>> var_name
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+  NameError: name 'var_name' is not defined
+  ```
+- A special variable named `_` (underscore).
+  - It holds the result of previous expression.
+  - ```python
+    >>> tax = 12.5 / 100
+    >>> price = 100.50
+    >>> price * tax
+    12.5625
+    >>> price + _
+    113.0625
+    ```
+  - Treat it as read-only.
+
+---
+
+### Strings in Python
+
+- Manipulate text.
+- Type: `str`.
+- Enclosed in:
+
+  - Single quotes: `'...'`.
+  - Double quotes: `"..."`.
+
+  > [!NOTE]
+  >
+  > To quote a quote:
+  >
+  > - "Escape" it, by preceding it with `\`: `'I\'m'`.
+  > - Use the other type of quote: `"I'm"`.
+  >
+  > To escape `\` itself:
+  >
+  > - Add another `\` in front of it: `\\`.
+  > - Use raw strings:
+  >   ```python
+  >   r'C:\Users\kasir-barati'
+  >   r'I\'m called back slash & \ is my symbol'
+  >   ```
+
+- [Learn how to use `\` at the end of your string](https://docs.python.org/3/faq/programming.html#faq-programming-raw-string-backslash):
+  ```python
+  # This is invalid
+  r"I am \"
+  ```
+- Use 3 quotation mark for multi line string:
+  - E.g.: `"""Multiline string"""`
+  - <table>
+      <thead>
+        <tr>
+          <th>Have the initial newline</th>
+          <th>Exclude the initial newline</th>
+        </tr>
+      </thead>
+      <tr>
+        <td><pre lang="python"><code>print("""
+    Hi
+    """)</code></pre></td>
+        <td><pre lang="python"><code>print("""\
+    Hi
+    """)</code></pre></td>
+      </tr>
+    </table>
+- Operators:
+
+  - `*`:
+    - Repeats it.
+    - E.g.: `3 * "hi "`
+  - `+`:
+    - Concatenates.
+    - E.g.: `"Mohammad " + 'Jawad'`.
+      - Same as: `"Mohammad " 'Jawad'` (only works with two literals).
+  - Mix them:
+    - E.g.: `("-" * 5) + "I LOVE AI" + ("""-""" * 5)`
+  - `[]`:
+
+    - Subscript:
+      - The first character's index is 0.
+      - Negative indices: start counting from the right.
+      - ```python
+        word = 'Python'
+        print(word[0])  # P
+        print(word[-1])  # n
+        ```
+    - Slicing:
+      ```python
+      # [0, 2)
+      # Returns 'Py'
+      word[0:2]
+      # Omitted first index defaults to zero
+      # Returns 'Py'
+      word[:2]
+      # Omitted second index defaults to the size of the string being sliced
+      # Returns 'on'
+      word[4:] # word[-2:]
+      # Returns 'Python'
+      word[:2] + word[2:]
+      # Out of range slicing:
+      # Returns 'on'
+      word[4:42]
+      # Out of range slicing:
+      # Returns ''
+      word[42:]
+      ```
+
+    ![Subscript operator](./assets/subscript-operator.png)
+
+    > [!CAUTION]
+    >
+    > ```python
+    > >>> word[42]
+    > Traceback (most recent call last):
+    >   File "<stdin>", line 1, in <module>
+    > IndexError: string index out of range
+    > ```
+
+- Immutable indices:
+  ```python
+  word[0] = 'K' # or word[2:] = 'char'
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+  TypeError: 'str' object does not support item assignment
+  ```
+- `len` built-in function return length of a string: `len(word) # 6`.
+- AKA ["text sequence type"](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str).
+
+### Lists in Python
+
+- A compound data type.
+- Group together other values.
+- The most versatile.
+- A list of comma-separated values/items between square brackets.
+- Can contain items of different types.
+- `len` returns the length of the list.
+- Can be indexed and sliced.
+- Mutable indices.
+
+```python
+squares = [1, 4, 9, 16, 25]
+squares[0] # 1
+squares[-1] # 25
+squares[-2:] # [16, 25]
+squares.append(113) # [1, 4, 9, 16, 25, 111]
+squares = squares + [36, 49] # [1, 4, 9, 16, 25, 111, 36, 49]
+squares[-3] = -888 # [1, 4, 9, 16, 25, -888, 36, 49]
+```
+
+#### Shallow copy
+
+```python
+books = ["Freakonomics", "The Prince", "The Pragmatic Programmer"]
+
+my_favorite_books = books
+
+my_favorite_books.append("The Zero Marginal Cost Society")
+
+print(books)
+```
+
+Any changes to one will be seen through all other variables that refer to the same list.
+
+```python
+books = [
+  "Hands-On machine learning with Keras and Tensorflow",
+  "Grokking Deep Learning"
+]
+
+# Here we are copying them
+want_to_read = books[:]
+
+want_to_read.append("Artificial Intelligence: A Guide for Thinking Humans")
+
+print(books)
+```
+
+> [!TIP]
+>
+> To learn how to style your code which is widely adapted you can check [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/).
+
+#### Multi Dimensional lists
+
+- 2D lists:
+
+  ![2 dimensional list](./assets/2d-list.png)
+
+- 3D lists:
+
+  ![3 dimensional list](./assets/3d-list.png)
+
+  ```python
+  array_3d = [
+      [  # Array 1
+          [111, 112, 113],
+          [121, 122, 123],
+          [131, 132, 133],
+      ],
+      [  # Array 2
+          [211, 212, 213],
+          [221, 222, 223],
+          [231, 232, 233],
+      ],
+      [  # Array 3
+          [311, 312, 313],
+          [321, 322, 323],
+          [331, 332, 333],
+      ],
+  ]
+  ```
+
+### Our first real program in Python
+
+I guess you know [Fibonacci series](https://en.wikipedia.org/wiki/Fibonacci_sequence).
+
+![Fibonacci series](./assets/fibonacci-series.png)
+
+Here is how you can code it in Python
+
+```python
+a, b = 0, 1
+while a < 10:
+    print(a)
+    a, b = b, a+b
+```
+
+<details>
+  <summary>Explanation of Python syntax used in this program</summary>
+  <ul>
+    <li>Multiple assignment.</li>
+    <li>
+      <code>while</code> loop.
+      <br />
+      <b>NOTE</b>: In Python any non-zero integer value is <code>true</code>. zero is <code>false</code>.
+      <br />
+      Comparison operators are:
+      <ul>
+        <li><code>&lt;</code> (less than).</li>
+        <li><code>&gt;</code> (greater than).</li>
+        <li><code>==</code> (equal to)</li>
+        <li><code>&lt;=</code> (less than or equal to).</li>
+        <li><code>&gt;=</code> (greater than or equal to).</li>
+        <li><code>!=</code> (not equal to).</li>
+      </ul>
+    </li>
+    <li><code>print()</code></li>
+  </ul>
+</details>
+
+### Ref
+
+[3. An Informal Introduction to Python](https://docs.python.org/3/tutorial/introduction.html).

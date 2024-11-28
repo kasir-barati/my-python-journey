@@ -31,4 +31,20 @@
       alt="Each byte is 8 bit, and each memory cell has an address."
     />
   </dd>
+  <dt id="fStringsDefinition">
+    <a href="#fStringsDefinition">#</a>
+    <i>f-strings</i>
+  </dt>
+  <dd>String literals that have embedded expressions.</dd>
+  <dd>
+    <pre lang="python">
+      <code>
+        name = "Fred"
+        f"He said his name is {name}."
+      </code>
+    </pre>
+  </dd>
+  <dd>
+    <a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">Learn more here</a>.
+  </dd>
 </dl>
