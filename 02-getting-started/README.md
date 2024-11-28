@@ -108,3 +108,96 @@ Use it:
 ## Ref
 
 - [https://docs.python.org/3/tutorial/interpreter.html](https://docs.python.org/3/tutorial/interpreter.html).
+
+## How computer memory works
+
+- Our memory defines us.
+  - You're past exps.
+  - Know-hows.
+  - etc.
+- Computers are the same in that regard.
+- In computers everything takes the form of what is commonly referred to as **bits**.
+
+### Bit
+
+- Stands for **b**inary dig**it**.
+  ![Binary digit](./assets/bit-stands-for-binary-digit.png)
+- Can switch between 0 and 1.
+- Every file/software consist of millions of these bits.
+- Each one of them is stored in a [memory cell](./glossary.md#memoryCellDefinition).
+
+### CPU -- Central Process Unit
+
+- Computer's brain.
+- Process bits.
+
+  ![CPU processes bits from memory](./assets/cpu-processing-bits.png)
+
+- The amount of bits needs to be processed grows. Thus the need to always even in the modern era to optimize your software.
+
+### Short-term memories
+
+- Needs to be fast, thus we can access any place of the memory in any order.
+- When we run a program CPU allocates memory to that program in short-term memory to run that program.
+- E.g. When you open a movie it needs to process bits of data and tell your monitor what to do. In order to do that it needs to put your video's info somewhere withing reach and that somewhere is short-term memories.
+- Used to store data just for a short period of time.
+- Cut of the power supply (electricity) and your data is gone.
+- Categories:
+  - DRAM -- Dynamic Random Access Memory.
+  - Cache -- Internal cache inside CPU made up from SRAM (Static RAM).
+
+### Long term memories
+
+- Most well know ones:
+
+  - Optical base storages:
+    - DVD -- Digital Versatile Disc.
+    - CD -- Compact Disc.
+  - HDD -- Hard Disk Driver.
+
+    - Magnetic storage.
+
+      ![Magnetic storage](./assets/magnetic-storage.png)
+
+  - SSD -- Solid State Drive.
+    - USB hard disk driver.
+
+- Used to store data permanently.
+- Turn off the computer and turn it back on the next day it still has the data.
+
+### Memory latency
+
+- The time it takes for the bits to be transferred from memory to CPU.
+
+  ![Data from memory to CPU and vice versa](./assets/memory-latency.png)
+
+### Digital storage terminology
+
+![Byte is 8 bits put together](./assets/byte.png)
+
+- Byte is 8 bits put together.
+- The space necessary to store 1 character (letter/number/symbol).
+
+![Kilobyte is 1000 bytes put together](./assets/kilobyte.png)
+
+- Kilobyte is 1000 bytes put together.
+- Enough to store one third of a page.
+
+> [!NOTE]
+>
+> Digital storage uses the binary system, thus everything needs to be in powers of two.
+
+![Megabyte](./assets/megabyte.png)
+
+- 1000 Kilobytes.
+- Roughly enough to store one book, one photo, or 1 minute of music.
+
+![Gigabyte](./assets/gigabyte.png)
+
+- 1000 Megabyte.
+- Enough for 1000 books.
+
+## Ref
+
+- [How computer memory works - Kanawat Senanan](https://youtu.be/p3q5zWCw8J4?si=th34ctRMV0u3Yrob).
+- [Computer Skills Course: Bits, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes (UPDATED VERSION)](https://youtu.be/u4P0LOofEFs?si=bnNIyTUaRmWWvZQn).
