@@ -607,3 +607,8 @@ while a < 10:
 ### Ref
 
 [3. An Informal Introduction to Python](https://docs.python.org/3/tutorial/introduction.html).
+
+## YouTube/Aparat
+
+- [https://youtu.be/6EXR3AwLRDM](https://youtu.be/6EXR3AwLRDM).
+- [https://aparat.com/v/ykic6v7](https://aparat.com/v/ykic6v7).
