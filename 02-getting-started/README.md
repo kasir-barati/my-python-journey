@@ -293,15 +293,26 @@ Use it:
 
 <table>
   <tr>
+    <th>Name</th>
+    <th>Plus/Addition</th>
+    <th>Minus/Subtract</th>
+    <th>Multiply</th>
+    <th>Division</th>
+    <th>Floor division</th>
+    <th>Remainder/Dividend</th>
+    <th>Power</th>
+    <th>N/A</th>
+  </tr>
+  <tr>
     <th>Operator</th>
-    <th>+</th>
-    <th>-</th>
-    <th>*</th>
-    <th>/</th>
-    <th>//</th>
-    <th>%</th>
-    <th>**</th>
-    <th>Mixed</th>
+    <td>+</td>
+    <td>-</td>
+    <td>*</td>
+    <td>/</td>
+    <td>//</td>
+    <td>%</td>
+    <td>**</td>
+    <td>Mixed</td>
   </tr>
   <tr>
     <th>Example</th>
@@ -314,7 +325,26 @@ Use it:
     <td><code>7**3</code></td>
     <td><code>7*3.2+1</code></td>
   </tr>
+  <tr>
+    <th>Results</th>
+    <td><code>10</code></td>
+    <td><code>4</code></td>
+    <td><code>21</code></td>
+    <td><code>2.3333333333333335</code></td>
+    <td><code>2</code></td>
+    <td><code>1</code></td>
+    <td><code>343</code></td>
+    <td><code>23.400000000000002</code></td>
+  </tr>
 </table>
+
+##### Operator precedence
+
+![Ordered operators](./assets/operator-precedence.png)
+
+Example:
+
+![An example of operator precedence order](./assets/operator-precedence-example.png)
 
 ---
 
