@@ -376,10 +376,6 @@ match coordinates:
 - [https://youtu.be/4Erc0hrn5nc](https://youtu.be/4Erc0hrn5nc).
 - [https://aparat.com/v/ptc0n77](https://aparat.com/v/ptc0n77).
 
----
-
 ## Ref
 
 - [From "More Control Flow Tools" up to "Defining Functions"](https://docs.python.org/3/tutorial/controlflow.html)
-
----
