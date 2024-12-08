@@ -1,4 +1,4 @@
-# write Fibonacci series less than n
+# write Fibonacci series less than number
 def fib(number):
     """Print a Fibonacci series less than number."""
     f0, f1 = 0, 1
