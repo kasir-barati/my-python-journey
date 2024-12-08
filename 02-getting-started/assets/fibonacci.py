@@ -9,14 +9,14 @@ def fib(number):
 
 fib(1994)
 
-# return Fibonacci series up to n
-def fib2(n):
-    """Return a list containing the Fibonacci series up to n."""
+# return Fibonacci series up to number
+def fib2(number):
+    """Return a list containing the Fibonacci series up to number."""
     result = []
-    a, b = 0, 1
-    while a < n:
-        result.append(a)    # see below
-        a, b = b, a+b
+    f0, f1 = 0, 1
+    while f0 < number:
+        result.append(f0)    # see below
+        f0, f1 = f1, f0+f1
     return result
 
 result = fib2(2000)
