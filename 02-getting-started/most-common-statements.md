@@ -38,6 +38,17 @@ else:
 - The `else` part is optional.
 - A substitute for the `switch` or `case` statements.
 
+> [!TIP]
+>
+> Truth Table:
+>
+> - `T` stands for "true".
+> - `F` stands for "false".
+> - `&&` equivalent in Python is `and`.
+> - `||` equivalent in Python is `or`.
+>
+> ![Truth table](./assets/truth-table.png)
+
 ### Literals VS Singletons
 
 - Literal: things like integers, floats, strings, lists, etc.
@@ -175,17 +186,17 @@ ads = [
   { 'title': 'Netflix', 'category': 'entertainment' },
   { 'title': 'Audible', 'category': 'audio-book' },
 ]
-for ad in ads.items():
+for ad in ads:
     if ad['category'] == 'entertainment':
         continue
     print("Personalized ad: ", ad['title'])
 for week in range(52):
-    print('Week #' + (week + 1))
+    print('Week #' + str(week + 1))
     for work_day in range(7):
-        if work_day > 5:
+        if work_day > 4:
             print("Hooray, its weekend!")
             break
-        print('Day #' + (work_day + 1))
+        print('Day #' + str(work_day + 1))
 ```
 
 > [!TIP]
@@ -242,13 +253,13 @@ print('Longitude: ', coordinates[1])
 
 ## `match` Statement
 
-- Commonly know as [structural pattern matching ([PEP 634](https://peps.python.org/pep-0634/))].
+- Commonly know as structural pattern matching ([PEP 634](https://peps.python.org/pep-0634/)).
 - Compares an expression's value to successive patterns.
 - AKA `switch` statement in C-family programming languages.
 
 ```python
 # LLM stands for Large Language Model
-llm = int(input("Please enter your LLM model: "))
+llm = input("Please enter your LLM: ")
 match llm:
     case "claude":
         print("Claude is a family of large language models developed by Anthropic.")
@@ -334,7 +345,7 @@ match event:
         print('It is neither "holiday" nor "workday"')
 ```
 
-### Accessing Unpacked a Subsequence
+### Access Unpacked Subsequence
 
 ```python
 coordinates = [
