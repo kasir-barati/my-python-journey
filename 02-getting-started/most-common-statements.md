@@ -371,6 +371,11 @@ match coordinates:
 >
 > To learn more read **[PEP 636](https://peps.python.org/pep-0636/)** which is interestingly **written in tutorial format**.
 
+## YouTube/Aparat
+
+- [https://youtu.be/4Erc0hrn5nc](https://youtu.be/4Erc0hrn5nc).
+- [https://aparat.com/v/ptc0n77](https://aparat.com/v/ptc0n77).
+
 ---
 
 ## Ref
