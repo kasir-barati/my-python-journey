@@ -161,7 +161,7 @@ Do not be afraid of reading docs. I wanna show you how you could accomplish same
 
   Imagine you have a big Lego set with pieces that build almost anything, but there are a few things you want to make that need super-special pieces that aren’t in the set. So, you ask someone who has those special pieces (like shiny or super-strong ones) to build those parts for you. Then, you add them to your Lego set, and now you can build even cooler stuff!
 
-- Extensive standard [library](./glossary.md#libraryGlossary); i.e. large collection of [modules](./glossary.md#moduleGlossary) and packages built into the language.
+- <a href="#extensiveBuiltinLibrariesInPython" id="extensiveBuiltinLibrariesInPython">#</a> Extensive standard [library](./glossary.md#libraryGlossary); i.e. large collection of [modules](./glossary.md#moduleGlossary) and packages built into the language.
   ![Extensive standard library](./assets/python-extensive-builtin-lib.png)
 
 ### Versatile

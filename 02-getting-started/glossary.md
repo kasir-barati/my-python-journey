@@ -47,4 +47,24 @@
   <dd>
     <a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">Learn more here</a>.
   </dd>
+  <dt id="arithmeticProgressionsDefinition">
+    <a href="#arithmeticProgressionsDefinition">#</a>
+    Arithmetic progressions
+  </dt>
+  <dd>
+    A sequence of numbers in which the difference between consecutive terms is constant.
+  </dd>
+  <dd>
+    General formula: <code>a, a+d, a+2d, a+3d, ...</code>
+    <br />
+    <code>a</code> is the first term.
+    <br />
+    Fixed difference is called the common difference (represented as <code>d</code>).
+  </dd>
+  <dd>
+    Positive common difference example sequence: <code>3, 7, 11, 15, 19, ...</code>
+  </dd>
+  <dd>
+    Negative common difference example sequence: <code>20, 15, 10, 5, 0, ...</code>
+  </dd>
 </dl>
