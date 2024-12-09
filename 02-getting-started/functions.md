@@ -263,6 +263,11 @@ def kwd_only_arg(*, arg):
 
 - You can have function that accept variable arguments (i.e. can accept any number of args).
 
+## YouTube/Aparat
+
+- [https://youtu.be/\_6kees89A-o](https://youtu.be/_6kees89A-o).
+- [https://aparat.com/v/juno9oe](https://aparat.com/v/juno9oe).
+
 ## Ref
 
 - ["Defining Functions" in "More Control Flow Tools"](https://docs.python.org/3/tutorial/controlflow.html#defining-functions).

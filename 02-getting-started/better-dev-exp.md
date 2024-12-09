@@ -130,3 +130,8 @@ def place_order(
 > [!CAUTION]
 >
 > This extension in my experience does not do a very good job. So be sure to read the PEP 8 just in case it was messing with your code.
+
+## YouTube/Aparat
+
+- [https://youtu.be/\_6kees89A-o](https://youtu.be/_6kees89A-o).
+- [https://aparat.com/v/juno9oe](https://aparat.com/v/juno9oe).
