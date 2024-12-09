@@ -15,7 +15,7 @@ def fib2(number):
     result = []
     f0, f1 = 0, 1
     while f0 < number:
-        result.append(f0) # result = result + [a]
+        result.append(f0)  # result = result + [f0]
         f0, f1 = f1, f0+f1
     return result
 

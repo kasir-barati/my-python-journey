@@ -104,8 +104,8 @@ print(user)
 ```python
 def add_to_cart(
         product,
-        quantity=1,
         cart,
+        quantity=1,
         app="website"):
     print(f"{quantity} {product}s has been added to your cart #{cart}.")
     print(f"Thanks for using our {app} :)")
@@ -181,10 +181,10 @@ greet("こにちは", "Mohammad san", "さくら", "Alex", "Hana", True)
 >
 > ```python
 > add_to_cart_args = {
->     product: "Chopstick",
->     quantity: 1,
->     cart: 565676,
->     app: "android-app"
+>     "product": "Chopstick",
+>     "quantity": 1,
+>     "cart": 565676,
+>     "app": "android-app"
 > }
 > add_to_cart(**add_to_cart_args)
 > ```
