@@ -92,7 +92,7 @@ Use it:
 
 ![Continuation lines and primary prompt](./assets/continuation-line-primary-prompt.png)
 
-- Python source files are treated as encoded in UTF-8 ([learn more about encoding](https://github.com/kasir-barati/html-css/blob/main/01-html/README.md#charset)).
+- <a href="#pythonSourceFilesEncoding" id="pythonSourceFilesEncoding">#</a> Python source files are treated as encoded in UTF-8 ([learn more about encoding](https://github.com/kasir-barati/html-css/blob/main/01-html/README.md#charset)).
 
   ```py
   # -*- coding: encoding -*-

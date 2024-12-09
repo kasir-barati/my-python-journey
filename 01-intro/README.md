@@ -94,7 +94,9 @@ There might be others who use things like [PyCharm](https://www.jetbrains.com/py
 
 2. Open it and inside it create a new directory called "HelloWorld".
 
-   BTW this is a naming convention ![naming conventions](./assets/naming-conventions.png)
+   <a href="#namingConventions" id="namingConventions">#</a> BTW these are naming conventions are commonly used by many developers:
+
+   ![naming conventions](./assets/naming-conventions.png)
 
 3. Open "HelloWorld" with VSCode.
 

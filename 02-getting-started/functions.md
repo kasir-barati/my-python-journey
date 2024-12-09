@@ -12,11 +12,7 @@
   - The body of the function start at the next line, and must be indented.
 - `"""Print a Fibonacci series less than number."""` is a [docstring](./glossary.md#docstringDefinition).
 
-  > [!NOTE]
-  >
-  > You can learn how to write good docstring by going through [PEP 0256](https://peps.python.org/pep-0256/), [PEP 0257](https://peps.python.org/pep-0257/) and [PEP 0258](https://peps.python.org/pep-0258/).
-
-https://github.com/kasir-barati/python/blob/16dba0a784a9c587a2b1e01246ea1d5777802e56/02-getting-started/assets/fibonacci.py#L1-L10
+  https://github.com/kasir-barati/python/blob/16dba0a784a9c587a2b1e01246ea1d5777802e56/02-getting-started/assets/fibonacci.py#L1-L10
 
 - It is the same as every other value, i.e. other names can also point to that same function:
 
@@ -209,17 +205,14 @@ greet("こにちは", "Mohammad san", "さくら", "Alex", "Hana", True)
   3. You/other dev know what to expect.
 
 ```python
-def place_order(product_id, quantity, /, discount_code=None, *, shipping_address, expedited=False):
-    """
-    Places an order for a product.
-
-    Arguments:
-    - product_id (int): ID of the product (positional-only)
-    - quantity (int): Quantity to order (positional-only)
-    - discount_code (str): Optional promo code (positional-or-keyword)
-    - shipping_address (str): Required keyword-only address
-    - expedited (bool): Optional, keyword-only flag for fast shipping
-    """
+def place_order(
+        product_id,
+        quantity,
+        /,
+        discount_code=None,
+        *,
+        shipping_address,
+        expedited=False):
     print(f"Order Details:\n - Product ID: {product_id}\n - Quantity: {quantity}")
     if discount_code:
         print(f" - Discount Code: {discount_code}")
