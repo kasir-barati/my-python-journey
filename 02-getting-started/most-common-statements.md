@@ -73,6 +73,21 @@ else:
       print("You'r old enough to drive a car, let's get your license!")
   ```
 
+#### `is None` VS `== None`
+
+```python
+p = [1]
+q = [1]
+print(p is q)  # False because they are not the same actual object
+print(p == q)  # True because they are equivalent
+```
+
+- Use `is None` as a general rule.
+- `is None` is a bit (~50%) faster than `== None`.
+- Sometimes `== None` acts weirdly.
+
+[Learn more](https://stackoverflow.com/q/3257919/8784518).
+
 ## Dictionary in Python
 
 - Built-in data type.
@@ -301,7 +316,11 @@ https://github.com/kasir-barati/python/blob/80b305428801a3517eec3e038987e1ed065c
 
 > [!TIP]
 >
-> - Unpacking a list in a match statement
+> <a href="#unpackingDictionaryListTuple" id="unpackingDictionaryListTuple">#</a> Unpacking a `dict`/`list`/tuple:
+>
+> - Unpacking a list in a match statement.
+>
+>   - We use the same syntax to unpack tuples that we use to unpack a list.
 >
 >   ```python
 >   value = [1, 2, 4]

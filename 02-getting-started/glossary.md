@@ -1,3 +1,5 @@
+# Dictionary
+
 <dl>
   <dt id="teletypewritersDefinition">
     <a href="#teletypewritersDefinition">#</a>
@@ -67,4 +69,57 @@
   <dd>
     Negative common difference example sequence: <code>20, 15, 10, 5, 0, ...</code>
   </dd>
+  <dt id="docstringDefinition">
+    <a href="#docstringDefinition">#</a>
+    docstring
+  </dt>
+  <dd>Short for documentation string.</dd>
+  <dd>
+    A special string used to document a module, <code>class</code>, or <code>function</code> in Python.
+  </dd>
+  <dd>Stored as part of the function’s metadata.</dd>
+  <dt id="callByReferenceDefinition">
+    <a href="#callByReferenceDefinition">#</a>
+    Call by reference
+  </dt>
+  <dd>
+    The value is always an object reference, not the value of the object.
+  </dd>
+  <dd>
+    <pre lang="python">
+      <code>
+      robot = {}
+      def deactivate(p):
+          p['active'] = False
+      print("Robot before function call: ", robot)
+      deactivate(robot)
+      print("Robot after function call: ", robot)
+      </code>
+    </pre>
+  </dd>
+  <dd><a href="#call-by-value-vs-call-by-reference">Check this to understand it better</a></dd>
+  <dt id="callByValueDefinition">
+    <a href="#callByValueDefinition">#</a>
+    Call by value
+  </dt>
+  <dd>
+    The actual parameters are evaluated and their values are copied to the callee.
+  </dd>
+  <dd>
+    <pre lang="python">
+      <code>
+      color = 'purple'
+      def some_func(p):
+          p = 'turquoise'
+      print("Before: ", color)
+      some_func(color)
+      print("After: ", color)
+      </code>
+    </pre>
+  </dd>
+  <dd><a href="#call-by-value-vs-call-by-reference">Check this to understand it better</a></dd>
 </dl>
+
+## Call by Value VS Call by Reference
+
+![Call by value VS call by reference](./assets/call-by-value-vs-call-by-ref.gif)
