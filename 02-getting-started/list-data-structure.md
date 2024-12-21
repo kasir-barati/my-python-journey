@@ -54,7 +54,8 @@ Extend the list by appending all the items from the iterable.
       <td>
 <pre lang="python">
 <code>
-nums = []
+from typing import List
+nums: List[int] = []
 nums.extend(range(1, 5))
 </code>
 </pre>
@@ -105,7 +106,7 @@ languages = ["にほんご", *languages]
 
 ### `remove(x)`
 
-Remove the first item from the list whose value is equal to 3. Raises a [`ValueError`](https://docs.python.org/3/library/exceptions.html#ValueError) if it could not find a match. |
+Remove the first item from the list whose value is equal to 3. Raises a [`ValueError`](https://docs.python.org/3/library/exceptions.html#ValueError) if it could not find a match.
 
 <table>
   <thead>
@@ -279,7 +280,7 @@ Return a shallow copy of the list.
 <table>
   <thead>
     <tr>
-      <th>`append`</th>
+      <th>copy</th>
       <th>Alternative</th>
     </tr>
   </thead>
@@ -353,7 +354,6 @@ Can implement **FIFO** with lists in Python:
 
       print("All messages are processed!")
 
-  # Start exploring the maze from room "A" looking for room "F"
   process_fifo(["Message #1",
                 "Message #2",
                 "Message #3",
@@ -440,8 +440,8 @@ return result
 <pre lang="python">
 <code>
 combs = []
-for x in [1,2,3]:
-    for y in [3,1,4]:
+for x in [1, 2, 3]:
+    for y in [3, 1, 4]:
         if x != y:
             combs.append((x, y))
 </code>
@@ -459,7 +459,7 @@ for x in [1,2,3]:
 > Flatten a 2D-array:
 >
 > ```python
-> vec = [[1,2,3], [4,5,6], [7,8,9]]
+> vec = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 > [num for elem in vec for num in elem]
 > ```
 >
@@ -534,11 +534,12 @@ matrix = [
 ]
 transposed = [
     [row[i] for row in matrix] # This inner list comprehension is evaluated in the context of the for that follows it
-    for i in range(len(4))  # 4 is how many element we have in each row
+    for i in range(4)  # 4 is how many element we have in each row
 ]
 </code>
 </pre>
       <img src="./assets/transpose-matrix.png" />
+      <br/>
       <img src="./assets/matrix-transpose-process.gif" />
       </td>
     <tr>
