@@ -40,7 +40,7 @@ Lambda functions in Python and other programming languages originates from Lambd
   - E.g. [`map()`, `filter()`](https://docs.python.org/3/library/functions.html), `functools.reduce()`, etc:
     ```python
     fruits = ['pineapple', 'banana', 'cherry']
-    res = map(str.upper, fruits)
+    res = list(map(str.upper, fruits))
     print(res)
     ```
 
@@ -64,8 +64,8 @@ full_name(' alen ', ' kim ') # Alen Kim
 
 list1 = [1, 2, 3]
 list2 = [4, 5, 6]
-sum_of_list1_and_list2_elements = map(lambda x, y: x + y, list1, list2)
-print(list(sum_of_list1_and_list2_elements))
+sum_of_list1_and_list2_elements = list(map(lambda x, y: x + y, list1, list2))
+print(sum_of_list1_and_list2_elements)
 ```
 
 ### Normal Function to Lambda Function
@@ -121,6 +121,11 @@ ZeroDivisionError: division by zero
     <tr>
   </tbody>
 </table>
+
+## YouTube/Aparat
+
+- [https://youtu.be/QRhJhlMGc8A](https://youtu.be/QRhJhlMGc8A).
+- [https://aparat.com/v/non5704](https://aparat.com/v/non5704).
 
 ## Learn more
 
