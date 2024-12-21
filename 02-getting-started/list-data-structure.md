@@ -13,7 +13,7 @@ Adds an item to the end of the list.
 <table>
   <thead>
     <tr>
-      <th>`append`</th>
+      <th><code>append</code></th>
       <th>Alternative</th>
     </tr>
   </thead>
@@ -45,7 +45,7 @@ Extend the list by appending all the items from the iterable.
 <table>
   <thead>
     <tr>
-      <th>`extend`</th>
+      <th><code>extend</code></th>
       <th>Alternative</th>
     </tr>
   </thead>
@@ -78,7 +78,7 @@ Insert an item at a given position.
 <table>
   <thead>
     <tr>
-      <th>`insert`</th>
+      <th><code>insert</code></th>
       <th>Alternative</th>
     </tr>
   </thead>
@@ -111,7 +111,7 @@ Remove the first item from the list whose value is equal to 3. Raises a [`ValueE
 <table>
   <thead>
     <tr>
-      <th>`remove`</th>
+      <th><code>remove</code></th>
       <th>Alternative</th>
     </tr>
   </thead>
@@ -158,7 +158,7 @@ Delete everything inside a list.
 <table>
   <thead>
     <tr>
-      <th>`clear`</th>
+      <th><code>clear</code></th>
       <th>Alternative</th>
     </tr>
   </thead>
@@ -280,7 +280,7 @@ Return a shallow copy of the list.
 <table>
   <thead>
     <tr>
-      <th>copy</th>
+      <th><code>copy</code></th>
       <th>Alternative</th>
     </tr>
   </thead>
@@ -570,6 +570,11 @@ del temp[:]
 > [!CAUTION]
 >
 > `del temp` will delete the entire variable. So it is totally different from `del temp[:]` which just clear the list.
+
+## YouTube/Aparat
+
+- [https://youtu.be/Uew0nl5N8-I](https://youtu.be/Uew0nl5N8-I).
+- [https://aparat.com/v/qpw127a](https://aparat.com/v/qpw127a).
 
 ## Ref
 
