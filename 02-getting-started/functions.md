@@ -100,6 +100,7 @@ print(user)
 ## `keyword_arg=value` / `kwarg=value`
 
 - You can pass values to a function args by their names.
+- AKA named arguments.
 
 ```python
 def add_to_cart(
